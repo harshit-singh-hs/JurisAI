@@ -12,3 +12,6 @@ markdown
 langchain-classic
 langchain-huggingface
 rank-bm25
+langgraph-checkpoint
+langgraph-checkpoint-sqlite
+bcrypt
