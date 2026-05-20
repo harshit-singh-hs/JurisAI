@@ -4,7 +4,7 @@ __pycache__/
 *.pyo
 .env
 data/app.db
-data/checkpoints.sqlite
+data/*.sqlite*
+data/chroma_db/
 .vercel/
-
 .vercel

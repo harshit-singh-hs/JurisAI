@@ -141,7 +141,20 @@ async def chat(request: ChatRequest, current_user: dict = Depends(get_current_us
         conn.close()
         
         if not exists:
-            title = request.message[:40] + "..." if len(request.message) > 40 else request.message
+            try:
+                from agents.llm_setup import get_llm
+                from agents.prompts import SESSION_TITLE_PROMPT
+                from langchain_core.prompts import PromptTemplate
+                llm = get_llm()
+                prompt = PromptTemplate.from_template(SESSION_TITLE_PROMPT)
+                chain = prompt | llm
+                title_response = chain.invoke({"message": request.message})
+                title = title_response.content.strip().replace('"', '').replace("'", "").replace('\n', ' ')
+                if not title or len(title) > 50:
+                    title = request.message[:40] + "..." if len(request.message) > 40 else request.message
+            except Exception as e:
+                print(f"Error generating title: {e}")
+                title = request.message[:40] + "..." if len(request.message) > 40 else request.message
             create_chat(session_id, user_id, title)
             
         initial_state = {

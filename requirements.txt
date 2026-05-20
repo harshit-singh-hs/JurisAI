@@ -9,3 +9,6 @@ python-dotenv
 pydantic
 beautifulsoup4
 markdown
+langchain-classic
+langchain-huggingface
+rank-bm25
