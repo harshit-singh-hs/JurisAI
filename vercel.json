@@ -1,19 +1,18 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "main.py",
-      "use": "@vercel/python"
+  "version": 3,
+  "functions": {
+    "main.py": {
+      "runtime": "python3.13"
     }
-  ],
+  },
   "routes": [
     {
       "src": "/static/(.*)",
-      "dest": "static/$1"
+      "dest": "/static/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "main.py"
+      "dest": "/main.py"
     }
   ]
 }
