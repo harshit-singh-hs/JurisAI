@@ -1,7 +1,7 @@
 {
   "version": 3,
   "functions": {
-    "main.py": {
+    "api/main.py": {
       "runtime": "python3.13"
     }
   },
@@ -12,7 +12,7 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/main.py"
+      "dest": "/api/main.py"
     }
   ]
 }
