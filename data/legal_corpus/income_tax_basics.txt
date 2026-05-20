@@ -1,0 +1,45 @@
+LEGAL GUIDE: INCOME TAX BASICS IN INDIA
+
+1. GOVERNING LAW
+- Income Tax Act, 1961.
+- Income Tax Rules, 1962.
+- Finance Act (annual budget).
+
+2. WHO MUST PAY INCOME TAX?
+- Individuals, Hindu Undivided Families (HUF), Partnership Firms, Companies, Association of Persons (AOP), Body of Individuals (BOI).
+- Based on residential status: Resident, Non-Resident, Resident but Not Ordinarily Resident.
+
+3. TAX SLABS (INDIVIDUAL - NEW REGIME, AY 2025-26)
+- Up to Rs. 3 lakhs: Nil
+- Rs. 3-7 lakhs: 5%
+- Rs. 7-10 lakhs: 10%
+- Rs. 10-12 lakhs: 15%
+- Rs. 12-15 lakhs: 20%
+- Above Rs. 15 lakhs: 30%
+- Standard deduction: Rs. 75,000.
+- Reference: Income Tax Act, 1961 (Section 115BAC).
+
+4. HEADS OF INCOME
+a) Salary (Section 15-17).
+b) Income from House Property (Sections 22-27).
+c) Profits and Gains of Business or Profession (Sections 28-44).
+d) Capital Gains (Sections 45-55A).
+e) Income from Other Sources (Sections 56-59).
+
+5. IMPORTANT DEDUCTIONS (OLD REGIME)
+- Section 80C: Up to Rs. 1.5 lakhs (PPF, ELSS, life insurance, tuition fees, home loan principal).
+- Section 80D: Medical insurance premiums (Rs. 25,000 self, Rs. 25,000 parents; Rs. 50,000 for senior citizens).
+- Section 80E: Education loan interest (no upper limit).
+- Section 80G: Donations to charitable institutions.
+- Section 24(b): Home loan interest (up to Rs. 2 lakhs for self-occupied property).
+
+6. FILING INCOME TAX RETURNS
+- Due date: 31st July for individuals (non-audit cases).
+- File online at incometax.gov.in.
+- Forms: ITR-1 (salaried individuals), ITR-2 (capital gains), ITR-3 (business income), ITR-4 (presumptive taxation).
+- Reference: Income Tax Act, 1961 (Section 139).
+
+7. PENALTIES
+- Non-filing: Penalty up to Rs. 5,000 (Section 234F).
+- Under-reporting income: 50% of tax payable (Section 270A).
+- Tax evasion: Prosecution and imprisonment (Sections 276C, 277).

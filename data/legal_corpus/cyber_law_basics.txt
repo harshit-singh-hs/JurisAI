@@ -1,0 +1,32 @@
+LEGAL GUIDE: CYBER LAW AND IT ACT IN INDIA
+
+1. GOVERNING LEGISLATION
+- Information Technology Act, 2000 (IT Act) and IT (Amendment) Act, 2008.
+- Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules, 2021.
+- Digital Personal Data Protection Act, 2023.
+
+2. COMMON CYBER CRIMES AND PUNISHMENTS
+a) Hacking (unauthorized access): Imprisonment up to 3 years and/or fine up to Rs. 5 lakhs. Reference: IT Act, Section 66.
+b) Identity Theft: Imprisonment up to 3 years and fine up to Rs. 1 lakh. Reference: IT Act, Section 66C.
+c) Cheating by Personation using Computer: Imprisonment up to 3 years and fine up to Rs. 1 lakh. Reference: IT Act, Section 66D.
+d) Cyber Stalking/Harassment: Publishing obscene material - Imprisonment up to 3 years and fine up to Rs. 5 lakhs. Reference: IT Act, Section 67.
+e) Child Pornography: Imprisonment up to 5 years (first offence), up to 7 years (subsequent). Reference: IT Act, Section 67B.
+f) Data Breach: Compensation payable as determined by adjudicating officer. Reference: IT Act, Section 43, 43A.
+
+3. REPORTING CYBER CRIME
+- File a complaint at the nearest Cyber Crime Police Station.
+- File online at the National Cyber Crime Reporting Portal: cybercrime.gov.in.
+- Report financial fraud on 1930 helpline.
+
+4. DATA PROTECTION
+- Digital Personal Data Protection Act, 2023 (DPDPA):
+  - Consent-based processing of personal data.
+  - Right to access, correct, and erase personal data.
+  - Data fiduciary obligations.
+  - Cross-border data transfer restrictions.
+  - Penalties up to Rs. 250 crores for violations.
+
+5. E-COMMERCE AND ELECTRONIC CONTRACTS
+- Electronic contracts are valid and enforceable (IT Act, Section 10A).
+- Digital signatures have the same legal validity as physical signatures (IT Act, Section 5).
+- E-records are admissible as evidence (Indian Evidence Act / Bharatiya Sakshya Adhiniyam, Section 65B).

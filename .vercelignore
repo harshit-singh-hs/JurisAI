@@ -1,0 +1,9 @@
+venv/
+.git/
+__pycache__/
+*.pyc
+*.pyo
+evaluation/
+scratch/
+test_*.py
+.env

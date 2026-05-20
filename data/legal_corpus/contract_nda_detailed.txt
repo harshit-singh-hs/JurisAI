@@ -1,0 +1,31 @@
+LEGAL GUIDE: NON-DISCLOSURE AGREEMENTS (NDA) IN INDIA
+
+1. WHAT IS AN NDA?
+- A Non-Disclosure Agreement (also called a Confidentiality Agreement) is a legally binding contract establishing a confidential relationship between parties.
+- It protects proprietary information, trade secrets, and sensitive data.
+- Reference: Indian Contract Act, 1872 (Sections 10, 23, 27).
+
+2. TYPES OF NDAs
+a) Unilateral NDA: One party discloses, the other receives (e.g., employer-employee).
+b) Bilateral/Mutual NDA: Both parties share confidential information (e.g., business partnerships, joint ventures).
+c) Multilateral NDA: Three or more parties; at least one party discloses.
+
+3. KEY CLAUSES
+- Definition of Confidential Information: Clearly specify what is covered (business plans, financial data, customer lists, technical know-how, algorithms, trade secrets).
+- Exclusions: Information already publicly available, independently developed, received from third parties, required by law.
+- Obligations of the Receiving Party: Non-disclosure, non-use (except for agreed purpose), safeguarding measures.
+- Duration: Typically 2-5 years, but trade secrets may be protected indefinitely.
+- Return/Destruction of Information: Upon termination or request.
+- Remedies for Breach: Injunctive relief, liquidated damages, indemnification.
+- Jurisdiction and Governing Law: Specify the courts and applicable law.
+
+4. ENFORCEABILITY IN INDIA
+- NDAs are governed by the Indian Contract Act, 1872.
+- Reasonable restrictions are enforceable; overly broad or unreasonable restrictions may be void (Section 27 - Agreements in restraint of trade).
+- Specific Relief Act, 1963 allows courts to grant injunctions for breach.
+- No specific statute governing NDAs; enforcement is contractual.
+
+5. REMEDIES FOR BREACH
+- Injunction to prevent further disclosure (Specific Relief Act, 1963).
+- Damages for actual loss suffered (Indian Contract Act, Sections 73-75).
+- Criminal prosecution may be possible under IT Act, 2000 (Section 72) for breach of confidentiality by service providers.

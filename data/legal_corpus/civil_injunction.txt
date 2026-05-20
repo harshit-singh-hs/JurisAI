@@ -1,0 +1,27 @@
+LEGAL GUIDE: INJUNCTIONS IN INDIAN CIVIL LAW
+
+1. WHAT IS AN INJUNCTION?
+- An injunction is a judicial order directing a person to do or refrain from doing a particular act.
+- Reference: Specific Relief Act, 1963 (Sections 36-42); CPC, 1908 (Order XXXIX).
+
+2. TYPES OF INJUNCTIONS
+a) Temporary (Interim) Injunction: Granted during the pendency of a suit to maintain status quo.
+b) Permanent Injunction: Granted in the final decree of the suit.
+c) Mandatory Injunction: Directs the defendant to perform a positive act.
+
+3. CONDITIONS FOR TEMPORARY INJUNCTION (THREE-PART TEST)
+- Prima Facie Case: The plaintiff must show a genuine, arguable case.
+- Balance of Convenience: More hardship to the plaintiff if injunction is denied than to the defendant if granted.
+- Irreparable Injury: The plaintiff would suffer harm that cannot be compensated by monetary damages.
+- Reference: CPC, 1908 (Order XXXIX, Rules 1-2); Dalpat Kumar v. Prahlad Singh (1992) SC.
+
+4. PROCEDURE
+- File an application for temporary injunction along with the main suit (or separately).
+- Support with affidavit and documentary evidence.
+- Court may grant ex-parte injunction in urgent cases (before hearing the other side).
+- Reference: CPC, 1908 (Order XXXIX, Rule 3 - Ex-parte injunction).
+
+5. VIOLATION OF INJUNCTION
+- Disobedience of an injunction order is punishable as contempt of court.
+- The court may order attachment of property, fine, or imprisonment.
+- Reference: CPC, 1908 (Order XXXIX, Rule 2A); Contempt of Courts Act, 1971.

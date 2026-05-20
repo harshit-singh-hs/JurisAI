@@ -1,0 +1,42 @@
+LEGAL PROCEDURE: TRADEMARK REGISTRATION IN INDIA
+
+1. WHAT IS A TRADEMARK?
+- A trademark is a mark capable of being represented graphically and distinguishing goods or services.
+- Includes: words, logos, symbols, colors, shapes, sounds, or combinations thereof.
+- Reference: Trade Marks Act, 1999 (Section 2(zb)).
+
+2. TRADEMARK SEARCH
+- Conduct a trademark search on the IP India website (ipindia.gov.in).
+- Check for existing identical or similar marks in the same class.
+- Recommended to consult a trademark attorney for comprehensive search.
+
+3. FILING THE APPLICATION
+- File application (Form TM-A) online on the IP India portal.
+- Specify the mark, class of goods/services (Nice Classification, 45 classes).
+- Pay the filing fee (Rs. 4,500 for e-filing; Rs. 9,000 for physical filing; 50% discount for startups, small enterprises, and individuals).
+- Reference: Trade Marks Act, 1999 (Section 18); Trade Marks Rules, 2017.
+
+4. EXAMINATION
+- The Trademark Registrar examines the application within 30-60 days.
+- Objections may be raised under absolute or relative grounds.
+- Absolute grounds: descriptive, generic, or deceptive marks (Section 9).
+- Relative grounds: conflict with prior marks (Section 11).
+- If objections are raised, file a response and/or attend a hearing.
+
+5. PUBLICATION IN TRADEMARK JOURNAL
+- If accepted, the trademark is published in the Trade Marks Journal.
+- Opposition period: 4 months from publication date.
+- Any person can file an opposition (Form TM-O) within this period.
+- Reference: Trade Marks Act, 1999 (Sections 20, 21).
+
+6. REGISTRATION CERTIFICATE
+- If no opposition or opposition is resolved, the trademark is registered.
+- Registration certificate is issued.
+- Valid for 10 years from the date of filing; renewable indefinitely.
+- Reference: Trade Marks Act, 1999 (Sections 23, 25).
+
+7. TRADEMARK INFRINGEMENT
+- Using a mark identical or deceptively similar to a registered trademark is infringement.
+- Remedies: Injunction, damages, accounts of profits, delivery up of infringing goods.
+- Criminal penalties: Imprisonment up to 3 years and/or fine up to Rs. 2 lakhs.
+- Reference: Trade Marks Act, 1999 (Sections 29, 103, 104).

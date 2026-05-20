@@ -1,0 +1,34 @@
+LEGAL GUIDE: EMPLOYMENT TERMINATION AND RETRENCHMENT IN INDIA
+
+1. TYPES OF TERMINATION
+a) Resignation: Employee voluntarily leaves. Notice period as per contract (typically 1-3 months).
+b) Termination by Employer: Can be for cause (misconduct) or without cause (retrenchment).
+c) Retrenchment: Termination due to surplus labour (not related to misconduct).
+d) Constructive Dismissal: Employee forced to resign due to hostile work environment.
+
+2. TERMINATION FOR CAUSE (MISCONDUCT)
+- Employer must conduct a domestic inquiry before termination.
+- Steps: Issue show-cause notice, appoint inquiry officer, give opportunity to defend, pass reasoned order.
+- Principles of natural justice must be followed (audi alteram partem - hear the other side).
+- Reference: Industrial Disputes Act, 1947 (Section 2(oo)); Standing Orders.
+
+3. RETRENCHMENT PROCEDURE
+- Applies to establishments with 100+ workers (for prior government approval).
+- Last In, First Out (LIFO) principle applies.
+- Must give 1 month's written notice (or pay in lieu).
+- Must pay retrenchment compensation: 15 days' average wages for every completed year of continuous service.
+- Must inform the appropriate government authority.
+- Reference: Industrial Disputes Act, 1947 (Section 25F, 25G, 25N).
+
+4. NOTICE PERIOD AND GRATUITY
+- Notice period: As per the employment contract or applicable standing orders.
+- Gratuity: Employees with 5+ years of service are entitled to gratuity.
+- Gratuity = 15 days' wages × years of service (for every completed year).
+- Maximum limit: Rs. 20 lakhs.
+- Reference: Payment of Gratuity Act, 1972 (Section 4).
+
+5. WRONGFUL TERMINATION REMEDIES
+- File a complaint with the Labour Commissioner.
+- Raise an industrial dispute under the Industrial Disputes Act, 1947.
+- Remedies: Reinstatement with or without back wages, compensation.
+- Reference: Industrial Disputes Act, 1947 (Section 2A, 10, 11A).

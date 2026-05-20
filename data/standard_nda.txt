@@ -1,0 +1,13 @@
+
+    NON-DISCLOSURE AGREEMENT
+    
+    This Non-Disclosure Agreement (the "Agreement") is entered into by and between the Disclosing Party and the Receiving Party.
+    
+    1. Definition of Confidential Information. "Confidential Information" means any information, technical data, or know-how, including, but not limited to, that which relates to research, product plans, products, services, customers, markets, software, developments, inventions, processes, designs, drawings, engineering, hardware configuration information, marketing, finances, or other business information disclosed by Disclosing Party to Receiving Party, either directly or indirectly in writing, orally, or by inspection of tangible objects.
+    
+    2. Non-Use and Non-Disclosure. Receiving Party agrees not to use any Confidential Information of Disclosing Party for any purpose except to evaluate and engage in discussions concerning a potential business relationship between the parties. Receiving Party agrees not to disclose any Confidential Information of Disclosing Party to third parties.
+    
+    3. Maintenance of Confidentiality. Receiving Party agrees that it shall take reasonable measures to protect the secrecy of and avoid disclosure and unauthorized use of the Confidential Information of Disclosing Party.
+    
+    4. Term. The obligations of Receiving Party under this Agreement shall survive until such time as all Confidential Information of Disclosing Party disclosed hereunder becomes publicly known and made generally available through no action or inaction of Receiving Party.
+    

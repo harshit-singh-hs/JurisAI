@@ -1,0 +1,37 @@
+LEGAL PROCEDURE: CHEQUE BOUNCE (DISHONOUR OF CHEQUE) IN INDIA
+
+1. WHAT IS CHEQUE BOUNCE?
+- When a cheque is returned unpaid by the bank due to insufficient funds or other reasons.
+- It is a criminal offence under the Negotiable Instruments Act, 1881.
+- Reference: Negotiable Instruments Act, 1881 (Section 138).
+
+2. GROUNDS FOR DISHONOUR
+- Insufficient funds in the drawer's account.
+- Amount exceeds the arrangement with the bank.
+- Cheque is post-dated or stale (valid for 3 months from date of issue).
+- Signature mismatch, overwriting, or alteration.
+- Account closed.
+- Stop payment instructions by the drawer.
+
+3. LEGAL PROCEDURE
+Step 1: Receive the cheque return memo from the bank (stating the reason for dishonour).
+Step 2: Send a legal notice to the drawer within 30 days of receiving the memo.
+  - The notice must demand payment of the cheque amount.
+Step 3: Wait for 15 days for the drawer to make the payment.
+Step 4: If payment is not made within 15 days, file a criminal complaint before the Magistrate within 30 days.
+- Reference: NI Act, 1881 (Sections 138, 141, 142).
+
+4. PENALTIES
+- Imprisonment up to 2 years.
+- Fine up to twice the cheque amount.
+- Or both.
+- Reference: NI Act, 1881 (Section 138).
+
+5. COMPOUNDING
+- The parties can settle the matter at any stage during the proceedings.
+- Upon settlement, the case is compounded (withdrawn).
+- Reference: NI Act, 1881 (Section 147).
+
+6. INTERIM COMPENSATION
+- Court may direct the accused to pay interim compensation (up to 20% of the cheque amount) during the trial.
+- Reference: NI Act, 1881 (Section 143A - inserted by 2018 Amendment).

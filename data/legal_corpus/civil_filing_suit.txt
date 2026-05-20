@@ -1,0 +1,55 @@
+LEGAL PROCEDURE: FILING A CIVIL SUIT IN INDIA
+
+1. WHAT IS A CIVIL SUIT?
+- A civil suit is a legal proceeding to enforce a right, seek compensation, or obtain relief in disputes between parties (not criminal matters).
+- Reference: Code of Civil Procedure, 1908 (CPC).
+
+2. JURISDICTION
+- Pecuniary Jurisdiction: Based on the value of the suit.
+- Territorial Jurisdiction: Where the defendant resides or cause of action arose.
+- Subject Matter Jurisdiction: Certain courts handle specific types of cases.
+- Reference: CPC, 1908 (Sections 15-20).
+
+3. DRAFTING THE PLAINT
+- The plaint is the written statement of the plaintiff's case.
+- Must contain: facts of the case, cause of action, relief sought, jurisdiction details, verification.
+- Reference: CPC, 1908 (Order VII).
+
+4. FILING PROCEDURE
+- File the plaint in the appropriate court with required court fees.
+- Court fees are based on the suit valuation (Court Fees Act, 1870).
+- Attach supporting documents, affidavit of verification.
+- The plaint is scrutinized by the court registry.
+
+5. SERVICE OF SUMMONS
+- After accepting the plaint, the court issues summons to the defendant.
+- The defendant must file a Written Statement (defense) within 30 days (extendable to 120 days).
+- Reference: CPC, 1908 (Order V - Summons; Order VIII - Written Statement).
+
+6. TRIAL PROCESS
+- Framing of Issues: Court identifies disputed points.
+- Plaintiff's Evidence: Examination-in-chief, cross-examination, re-examination.
+- Defendant's Evidence: Same procedure.
+- Final Arguments by both sides.
+- Judgment and Decree.
+- Reference: CPC, 1908 (Order XIV - Issues; Order XVIII - Evidence).
+
+7. TYPES OF CIVIL SUITS
+- Suits for recovery of money (Order XXXVII - Summary Suits for quicker disposal).
+- Suits for declaration of rights.
+- Suits for specific performance of contracts.
+- Suits for injunction (temporary or permanent).
+- Suits for partition of property.
+- Suits for possession of property.
+
+8. LIMITATION PERIOD
+- Suits for recovery of money: 3 years from when the right to sue accrues.
+- Suits for possession of immovable property: 12 years.
+- Suits for specific performance: 3 years.
+- Reference: Limitation Act, 1963 (Schedule - Articles 55, 65, 54).
+
+9. APPEALS
+- First Appeal: To the District Court or High Court.
+- Second Appeal: To the High Court on substantial questions of law only.
+- Special Leave Petition: To the Supreme Court under Article 136 of the Constitution.
+- Reference: CPC, 1908 (Sections 96, 100); Constitution of India (Article 136).

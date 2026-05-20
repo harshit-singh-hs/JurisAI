@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JurisAI Advisor - Legal & Contract Assistant</title>
+    <!-- Google Fonts: Playfair Display for headings and Inter for UI text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <!-- Auth Container -->
+    <div id="auth-container" class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <span class="auth-icon">⚖️</span>
+                <h2>JurisAI Advisor</h2>
+                <p>Intelligent Business & Contract Law Assistant</p>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form">
+                <h3>Account Log In</h3>
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" required placeholder="name@firm.com">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required placeholder="••••••••">
+                </div>
+                <div id="login-error" class="error-msg hidden"></div>
+                <button type="submit" class="btn btn-primary">Log In</button>
+                <p class="auth-switch">Don't have an account? <a href="#" id="show-register">Create one</a></p>
+            </form>
+            
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form hidden">
+                <h3>Create Account</h3>
+                <div class="form-group">
+                    <label for="register-email">Email Address</label>
+                    <input type="email" id="register-email" required placeholder="name@firm.com">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" required placeholder="Min. 8 characters">
+                </div>
+                <div id="register-error" class="error-msg hidden"></div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <p class="auth-switch">Already have an account? <a href="#" id="show-login">Log in</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- App Container -->
+    <div id="app-container" class="app-container hidden">
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">⚖️</span>
+                    <h2>JurisAI</h2>
+                </div>
+                <button id="close-sidebar-btn" class="mobile-only-btn">×</button>
+            </div>
+            
+            <button id="new-chat-btn" class="btn btn-new-chat">
+                <span class="btn-icon">+</span> New Consultation
+            </button>
+            
+            <div class="chat-history">
+                <h3>Previous Consultations</h3>
+                <div id="chat-list" class="chat-list">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <span class="user-avatar" id="user-avatar">U</span>
+                    <span class="user-email" id="user-email">user@firm.com</span>
+                </div>
+                <button id="logout-btn" class="btn btn-secondary btn-logout">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-chat">
+            <header class="chat-header">
+                <div class="header-left">
+                    <button id="menu-btn" class="menu-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                    </button>
+                    <div class="chat-title-container">
+                        <h1 id="active-chat-title">New Consultation</h1>
+                        <p class="chat-status">Hybrid Search (Chroma + BM25) • Llama-3.3-70B</p>
+                    </div>
+                </div>
+            </header>
+
+            <div id="chat-box" class="chat-box">
+                <!-- Messages dynamic -->
+            </div>
+
+            <div class="input-area-container">
+                <div class="input-area">
+                    <textarea id="user-input" placeholder="Ask a legal query or paste a contract clause..."></textarea>
+                    <button id="send-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </button>
+                </div>
+                <div class="disclaimer-note">
+                    Disclaimer: JurisAI is an AI assistant and does not substitute for professional legal counsel.
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>

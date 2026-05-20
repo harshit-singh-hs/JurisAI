@@ -1,0 +1,39 @@
+LEGAL PROCEDURE: FILING AN RTI APPLICATION IN INDIA
+
+1. WHAT IS RTI?
+- The Right to Information Act, 2005 empowers every citizen to request information from public authorities.
+- Promotes transparency and accountability in government functioning.
+- Reference: Right to Information Act, 2005 (Sections 3, 6).
+
+2. WHO CAN FILE?
+- Any citizen of India (not available to corporations, societies, etc.).
+
+3. WHAT INFORMATION CAN BE REQUESTED?
+- Any information held by a public authority: records, documents, memos, emails, opinions, press releases, contracts.
+- Exemptions: National security, sovereignty, trade secrets, cabinet papers, personal privacy.
+- Reference: RTI Act, 2005 (Sections 8, 9).
+
+4. PROCEDURE
+- Write a simple application addressed to the Public Information Officer (PIO) of the concerned department.
+- No specific format required; just state the information needed clearly.
+- Pay the application fee: Rs. 10 (for Central Government; varies for state governments).
+- BPL cardholders are exempted from fees.
+- Submit by post, in person, or online (rtionline.gov.in for Central Government).
+- Reference: RTI Act, 2005 (Section 6).
+
+5. TIMELINE
+- The PIO must respond within 30 days.
+- If the information concerns the life or liberty of a person: 48 hours.
+- If the PIO transfers the application to another authority: 5 days for transfer + 30 days.
+
+6. FIRST APPEAL
+- If no response within 30 days or unsatisfactory response, file First Appeal.
+- File within 30 days before the First Appellate Authority (officer senior to the PIO).
+- No fee for first appeal.
+- Reference: RTI Act, 2005 (Section 19(1)).
+
+7. SECOND APPEAL
+- If dissatisfied with First Appeal, file Second Appeal within 90 days.
+- File before the Central Information Commission (CIC) or State Information Commission (SIC).
+- The Commission can impose penalties on the PIO for wrongful denial (Rs. 250 per day, up to Rs. 25,000).
+- Reference: RTI Act, 2005 (Sections 19(3), 20).

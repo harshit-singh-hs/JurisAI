@@ -1,0 +1,34 @@
+LEGAL GUIDE: PARTNERSHIP FIRMS IN INDIA
+
+1. WHAT IS A PARTNERSHIP?
+- A partnership is the relation between persons who have agreed to share profits of a business carried on by all or any of them acting for all.
+- Reference: Indian Partnership Act, 1932 (Section 4).
+
+2. PARTNERSHIP DEED - ESSENTIAL CLAUSES
+- Name of the firm and nature of business.
+- Names, addresses, and contributions of all partners.
+- Profit and loss sharing ratio.
+- Rights, duties, and obligations of each partner.
+- Duration of partnership (at will or for a fixed term).
+- Rules for admission, retirement, and expulsion of partners.
+- Procedure for dissolution.
+- Dispute resolution mechanism (arbitration clause recommended).
+- Reference: Indian Partnership Act, 1932 (Sections 11-17).
+
+3. REGISTRATION OF PARTNERSHIP FIRM
+- Registration is optional but highly recommended.
+- Without registration, partners cannot file suits against each other or third parties in court.
+- File application with the Registrar of Firms along with the partnership deed and fees.
+- Reference: Indian Partnership Act, 1932 (Sections 56-59).
+
+4. RIGHTS AND DUTIES OF PARTNERS
+- Every partner has the right to participate in management.
+- Partners must act in good faith and render true accounts.
+- A partner must not carry on competing business.
+- Reference: Indian Partnership Act, 1932 (Sections 12-16).
+
+5. DISSOLUTION OF PARTNERSHIP
+- By agreement, by notice (partnership at will), by court order.
+- Compulsory dissolution: insolvency of all partners, illegality of business.
+- Settlement of accounts: debts to third parties paid first, then partners' loans, then capital.
+- Reference: Indian Partnership Act, 1932 (Sections 40-55).

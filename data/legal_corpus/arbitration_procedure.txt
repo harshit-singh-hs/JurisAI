@@ -1,0 +1,40 @@
+LEGAL GUIDE: ARBITRATION IN INDIA
+
+1. WHAT IS ARBITRATION?
+- Arbitration is an alternative dispute resolution (ADR) mechanism where disputes are resolved by an impartial tribunal instead of courts.
+- Reference: Arbitration and Conciliation Act, 1996 (A&C Act).
+
+2. TYPES OF ARBITRATION
+a) Domestic Arbitration: Both parties are Indian; seat of arbitration is in India.
+b) International Commercial Arbitration: One party is foreign; governed by Part I of the A&C Act.
+c) Institutional Arbitration: Conducted under institutional rules (e.g., ICC, SIAC, MCIA, DIAC).
+d) Ad Hoc Arbitration: Parties manage the process themselves without an institution.
+
+3. ARBITRATION AGREEMENT
+- Must be in writing (can be part of a contract or a separate agreement).
+- Must clearly express the intention to resolve disputes through arbitration.
+- Reference: A&C Act, 1996 (Section 7).
+
+4. PROCEDURE
+a) Notice of Arbitration: Claimant sends notice invoking arbitration.
+b) Appointment of Arbitrator(s): As per agreement; if parties fail to agree, court appoints (Section 11).
+c) Statement of Claim: Claimant files detailed claim with supporting documents.
+d) Statement of Defence: Respondent files defence and counterclaim (if any).
+e) Hearings: Oral hearings or document-only proceedings.
+f) Award: Arbitral tribunal passes a reasoned award.
+- Reference: A&C Act, 1996 (Sections 21-31).
+
+5. TIMELINE
+- Domestic arbitration: Award must be passed within 12 months (extendable to 18 months by parties).
+- Reference: A&C Act, 1996 (Section 29A).
+
+6. CHALLENGING AN AWARD
+- Application to set aside: Filed under Section 34 within 3 months.
+- Grounds: Incapacity, invalid agreement, lack of notice, beyond scope, composition of tribunal, conflict with public policy.
+- Appeal: Under Section 37 to the High Court (limited grounds).
+- Reference: A&C Act, 1996 (Sections 34, 37).
+
+7. ENFORCEMENT
+- Domestic awards: Enforceable as a decree of court (Section 36).
+- Foreign awards: Enforceable under Part II (New York Convention / Geneva Convention).
+- Reference: A&C Act, 1996 (Sections 36, 44-52).

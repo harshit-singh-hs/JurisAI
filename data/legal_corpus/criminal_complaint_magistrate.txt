@@ -1,0 +1,30 @@
+LEGAL PROCEDURE: FILING A PRIVATE COMPLAINT BEFORE MAGISTRATE IN INDIA
+
+1. WHEN TO FILE A PRIVATE COMPLAINT
+- When police refuse to register an FIR.
+- For non-cognizable offences (e.g., cheating, defamation, certain fraud cases).
+- When the complainant wants to directly approach the court.
+- Reference: BNSS, 2023 (Section 175).
+
+2. PROCEDURE
+- Draft a written complaint with facts of the offence, details of accused, evidence.
+- File the complaint before the Judicial Magistrate First Class (JMFC) having jurisdiction.
+- The Magistrate examines the complainant on oath (Section 175(3), BNSS).
+- If prima facie case is made out, Magistrate may:
+  a) Direct the police to investigate (Section 175(3), BNSS).
+  b) Issue process (summons or warrant) against the accused.
+
+3. EXAMINATION OF WITNESSES
+- Before issuing process, the Magistrate may examine the complainant's witnesses.
+- The Magistrate can also order an inquiry by a police officer.
+
+4. IMPORTANT CONSIDERATIONS
+- Limitation period for filing: Generally within 3 years of the offence (for offences punishable up to 3 years).
+- No limitation for serious offences (punishable with death, life imprisonment, or > 3 years).
+- Reference: BNSS, 2023 (Section 468); Limitation provisions.
+
+5. AFTER PROCESS IS ISSUED
+- The accused is served with summons to appear before the court.
+- Charges are framed and trial proceeds.
+- Both sides present evidence and witnesses.
+- Court delivers judgment.

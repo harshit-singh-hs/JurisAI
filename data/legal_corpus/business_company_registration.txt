@@ -1,0 +1,46 @@
+LEGAL PROCEDURE: REGISTERING A COMPANY IN INDIA
+
+1. TYPES OF COMPANIES
+- Private Limited Company (Pvt. Ltd.): Minimum 2 directors, 2 shareholders. Most common for startups.
+- Public Limited Company (Ltd.): Minimum 3 directors, 7 shareholders. Can list on stock exchange.
+- One Person Company (OPC): Single director and shareholder.
+- Limited Liability Partnership (LLP): Minimum 2 designated partners.
+- Reference: Companies Act, 2013 (Sections 2(68), 2(71), 2(62)); LLP Act, 2008.
+
+2. PRE-REGISTRATION STEPS
+- Obtain Digital Signature Certificate (DSC) for all directors.
+- Obtain Director Identification Number (DIN) via SPICe+ form.
+- Reserve a unique company name via the RUN (Reserve Unique Name) service on MCA portal.
+
+3. INCORPORATION PROCESS (SPICe+ FORM)
+- File SPICe+ (Simplified Proforma for Incorporating Company Electronically Plus) on the MCA portal.
+- This single form covers:
+  - Company incorporation
+  - DIN allotment
+  - PAN and TAN application
+  - GST registration
+  - EPFO and ESIC registration
+  - Bank account opening request
+- Reference: Companies Act, 2013 (Section 7 - Incorporation of Company).
+
+4. DOCUMENTS REQUIRED
+- Memorandum of Association (MOA): Objects and scope of the company.
+- Articles of Association (AOA): Internal rules and regulations.
+- Proof of registered office address.
+- Identity and address proof of directors and shareholders.
+- Declaration by professionals (CA/CS/Advocate).
+- Reference: Companies Act, 2013 (Sections 4, 5, 7).
+
+5. POST-INCORPORATION COMPLIANCE
+- Hold the first Board Meeting within 30 days.
+- Issue share certificates within 60 days.
+- File Declaration of Commencement of Business (INC-20A) within 180 days.
+- Appoint a statutory auditor within 30 days.
+- Maintain statutory registers (members, directors, charges).
+- Annual compliances: Annual Return (MGT-7), Financial Statements (AOC-4), Income Tax Return.
+- Reference: Companies Act, 2013 (Sections 12, 92, 96, 137, 139).
+
+6. KEY REGULATORY BODIES
+- Ministry of Corporate Affairs (MCA)
+- Registrar of Companies (ROC)
+- Securities and Exchange Board of India (SEBI) - for public companies

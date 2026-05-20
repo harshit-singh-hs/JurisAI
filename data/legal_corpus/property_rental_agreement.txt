@@ -1,0 +1,46 @@
+LEGAL PROCEDURE: CREATING A RENTAL/LEASE AGREEMENT IN INDIA
+
+1. TYPES OF RENTAL AGREEMENTS
+- Leave and License Agreement (recommended, commonly used): Governed by state-specific laws.
+- Lease Agreement (for longer terms, typically > 12 months): Governed by Transfer of Property Act, 1882 (Section 105).
+- Rent Agreement under Rent Control Acts (state-specific).
+
+2. ESSENTIAL CLAUSES IN A RENTAL AGREEMENT
+- Names and addresses of landlord and tenant.
+- Description of the property (address, area, furnishing details).
+- Monthly rent amount and due date.
+- Security deposit amount (typically 2-10 months' rent depending on city).
+- Duration of the agreement (11 months is common to avoid Registration Act requirements).
+- Notice period for termination (typically 1-3 months).
+- Maintenance charges and utility responsibilities.
+- Restrictions on subletting and use of premises.
+- Clause on rent escalation (annual increase, typically 5-10%).
+- Reference: Indian Contract Act, 1872; Transfer of Property Act, 1882.
+
+3. STAMP DUTY AND REGISTRATION
+- Agreements for 11 months or less: Stamp duty on notarized agreement (varies by state).
+- Agreements exceeding 12 months: Must be registered under Registration Act, 1908 (Section 17).
+- E-registration available in many states (Maharashtra, Karnataka, etc.).
+
+4. POLICE VERIFICATION
+- Landlord should get police verification of the tenant done.
+- Required in many cities; available online in some states.
+
+5. RIGHTS OF LANDLORD
+- Right to receive rent on time.
+- Right to inspect the property with prior notice.
+- Right to evict tenant for non-payment, misuse, or breach of terms.
+- Reference: State-specific Rent Control Acts.
+
+6. RIGHTS OF TENANT
+- Right to peaceful possession during the lease period.
+- Right to essential services (water, electricity).
+- Protection against arbitrary eviction.
+- Right to receive rent receipts.
+- Reference: State-specific Rent Control Acts; Model Tenancy Act, 2021.
+
+7. EVICTION PROCEDURE
+- Issue a legal notice to the tenant specifying grounds for eviction.
+- If tenant does not vacate, file an eviction petition before the Rent Controller/Court.
+- Grounds: Non-payment of rent, subletting without permission, misuse, bona fide need of landlord.
+- Reference: State Rent Control Acts; Code of Civil Procedure, 1908 (Order XXI).

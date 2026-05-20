@@ -1,0 +1,44 @@
+LEGAL GUIDE: PATENT LAW IN INDIA
+
+1. WHAT IS A PATENT?
+- A patent is an exclusive right granted for an invention (product or process) that is new, involves an inventive step, and is capable of industrial application.
+- Reference: Patents Act, 1970 (Section 2(1)(j), Section 2(1)(ja)).
+
+2. WHAT CAN BE PATENTED?
+- New products and processes in any field of technology.
+- Must satisfy: Novelty, Inventive Step, Industrial Applicability.
+- Reference: Patents Act, 1970 (Sections 2(1)(j), 2(1)(ja), 2(1)(ac)).
+
+3. WHAT CANNOT BE PATENTED (Section 3)?
+- Frivolous inventions contrary to natural laws.
+- Inventions contrary to public order or morality.
+- Mere discoveries of scientific principles or formulations of abstract theories.
+- Substances obtained by mere admixture.
+- Methods of agriculture or horticulture.
+- Computer programs per se (but software with technical application may be patentable).
+- Business methods.
+- Traditional knowledge.
+- Reference: Patents Act, 1970 (Sections 3, 4).
+
+4. PATENT APPLICATION PROCESS
+a) File a patent application (provisional or complete specification) at the Indian Patent Office.
+b) Publication: Application is published after 18 months (or early publication upon request).
+c) Examination: Request for examination must be filed within 48 months.
+d) First Examination Report (FER): Patent Office raises objections.
+e) Response: Applicant responds to objections within 6 months.
+f) Grant or Refusal: Patent is granted if all objections are resolved.
+- Reference: Patents Act, 1970 (Sections 7-11A, 12-15, 43).
+
+5. DURATION
+- 20 years from the date of filing.
+- Annual renewal fees must be paid.
+- Reference: Patents Act, 1970 (Section 53).
+
+6. COMPULSORY LICENSING
+- Government can grant compulsory license if: patent not available at reasonable price, not meeting public demand, not worked in India.
+- Reference: Patents Act, 1970 (Sections 84-92).
+
+7. INFRINGEMENT
+- Making, using, selling, or importing a patented invention without permission.
+- Remedies: Injunction, damages or accounts of profits, delivery up.
+- Reference: Patents Act, 1970 (Sections 104-115).

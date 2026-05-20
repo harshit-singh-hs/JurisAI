@@ -1,0 +1,28 @@
+LEGAL GUIDE: SERVICE AGREEMENTS IN INDIA
+
+1. WHAT IS A SERVICE AGREEMENT?
+- A contract between a service provider and a client specifying the terms of service delivery.
+- Reference: Indian Contract Act, 1872 (Sections 10, 23).
+
+2. ESSENTIAL CLAUSES
+- Scope of Services: Detailed description of services to be provided.
+- Duration: Start date, end date, renewal terms.
+- Compensation: Payment terms, invoicing, taxes (GST applicability).
+- Service Level Agreement (SLA): Performance standards, uptime guarantees, response times.
+- Intellectual Property: Ownership of deliverables, pre-existing IP, licenses.
+- Confidentiality: NDA provisions for shared information.
+- Indemnification: Protection against third-party claims.
+- Limitation of Liability: Cap on damages (typically limited to fees paid).
+- Termination: Conditions for termination, notice period, consequences.
+- Force Majeure: Excusing performance due to unforeseen events.
+- Dispute Resolution: Arbitration clause (Arbitration and Conciliation Act, 1996) or jurisdiction.
+- Governing Law: Indian law or as agreed by parties.
+
+3. INDEPENDENT CONTRACTOR VS. EMPLOYEE
+- Service agreements create an independent contractor relationship, NOT an employment relationship.
+- Key differences: control over work, method of payment, provision of tools, exclusivity.
+- Misclassification can lead to labor law obligations.
+
+4. STAMP DUTY
+- Service agreements may require stamp duty based on the state where executed.
+- Reference: Indian Stamp Act, 1899 (varies by state).

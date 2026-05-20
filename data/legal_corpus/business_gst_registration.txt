@@ -1,0 +1,41 @@
+LEGAL PROCEDURE: GST REGISTRATION IN INDIA
+
+1. WHO MUST REGISTER FOR GST?
+- Businesses with annual turnover exceeding Rs. 40 lakhs (Rs. 20 lakhs for special category states).
+- Businesses with annual turnover exceeding Rs. 20 lakhs for services (Rs. 10 lakhs for special category states).
+- Inter-state suppliers (mandatory regardless of turnover).
+- E-commerce operators and their sellers.
+- Casual taxable persons and non-resident taxable persons.
+- Reference: Central Goods and Services Tax Act, 2017 (Section 22).
+
+2. TYPES OF GST REGISTRATION
+- Regular: For businesses above the threshold.
+- Composition Scheme: For small businesses (turnover up to Rs. 1.5 crores), pay tax at a fixed rate.
+- Casual Registration: For occasional or seasonal businesses.
+- Reference: CGST Act, 2017 (Sections 22-25, 10).
+
+3. REGISTRATION PROCESS
+- Visit the GST Portal (gst.gov.in).
+- Fill Part A of Form GST REG-01 (PAN, mobile number, email).
+- Receive OTP verification and Temporary Reference Number (TRN).
+- Fill Part B with business details, bank account information, and upload documents.
+- Submit the application. ARN (Application Reference Number) is generated.
+- Verification by the GST officer within 7 working days.
+- GSTIN (15-digit GST Identification Number) is issued.
+- Reference: CGST Rules, 2017 (Rules 8-12).
+
+4. DOCUMENTS REQUIRED
+- PAN card of the business/proprietor.
+- Aadhaar card of the proprietor/partners/directors.
+- Proof of business registration (MOA, Partnership Deed, etc.).
+- Address proof of the principal place of business.
+- Bank account statement or cancelled cheque.
+- Photograph of the proprietor/partners/directors.
+- Authorization letter or board resolution.
+
+5. POST-REGISTRATION OBLIGATIONS
+- Issue GST-compliant invoices.
+- File monthly/quarterly returns: GSTR-1 (outward supplies), GSTR-3B (summary return).
+- File annual return: GSTR-9.
+- Maintain proper books of accounts for 6 years.
+- Reference: CGST Act, 2017 (Sections 31, 35, 37, 39, 44).

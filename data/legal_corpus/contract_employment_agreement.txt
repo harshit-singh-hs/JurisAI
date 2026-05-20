@@ -1,0 +1,32 @@
+LEGAL GUIDE: EMPLOYMENT AGREEMENTS IN INDIA
+
+1. PURPOSE
+- An employment agreement defines the terms and conditions of employment between employer and employee.
+- While not always mandatory, it is strongly recommended to prevent disputes.
+
+2. ESSENTIAL CLAUSES
+- Job Title and Description: Role, responsibilities, reporting structure.
+- Compensation: Salary breakdown (basic, HRA, special allowances), bonus structure, stock options.
+- Working Hours: Standard hours, overtime policy, flexible work arrangements.
+- Probation Period: Typically 3-6 months; terms for confirmation or termination during probation.
+- Leave Policy: Annual leave, sick leave, casual leave, maternity/paternity leave.
+- Confidentiality Clause: Protection of employer's trade secrets and proprietary information.
+- Non-Compete Clause: Restrictions on joining competitors (generally unenforceable in India under Section 27 of the Indian Contract Act; reasonable restrictions during employment may be upheld).
+- Non-Solicitation Clause: Prohibition on soliciting employer's clients or employees.
+- Intellectual Property Assignment: All IP created during employment belongs to the employer.
+- Termination Clause: Notice period, grounds for termination, severance pay.
+- Dispute Resolution: Arbitration or court jurisdiction.
+
+3. KEY STATUTORY PROTECTIONS
+- Minimum wages as per Minimum Wages Act, 1948 (or Code on Wages, 2019).
+- Payment of Bonus Act, 1965.
+- Employees' Provident Funds and Miscellaneous Provisions Act, 1952.
+- Employees' State Insurance Act, 1948.
+- Maternity Benefit Act, 1961 (26 weeks paid maternity leave).
+- Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013.
+- Reference: Various labor codes and acts as applicable.
+
+4. RESTRICTIVE COVENANTS
+- Non-compete: Post-termination non-compete clauses are generally VOID in India (Section 27, Indian Contract Act, 1872).
+- Non-solicitation: May be enforceable if reasonable in scope and duration.
+- Garden Leave: Employee is paid but asked not to work during notice period; more enforceable alternative to non-compete.

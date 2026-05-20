@@ -1,0 +1,32 @@
+LEGAL GUIDE: ENVIRONMENTAL LAW IN INDIA
+
+1. KEY LEGISLATION
+a) Environment Protection Act, 1986 (EPA): Umbrella legislation for environmental protection.
+b) Water (Prevention and Control of Pollution) Act, 1974.
+c) Air (Prevention and Control of Pollution) Act, 1981.
+d) Forest Conservation Act, 1980.
+e) Wildlife Protection Act, 1972.
+f) National Green Tribunal Act, 2010.
+
+2. ENVIRONMENTAL CLEARANCE
+- Required for projects listed in the EIA Notification, 2006.
+- Categories: Category A (Central Government clearance via MoEFCC) and Category B (State-level SEIAA).
+- Process: Screening, Scoping, Public Consultation, EIA Report, Appraisal, Decision.
+- Reference: EPA, 1986; EIA Notification, 2006.
+
+3. NATIONAL GREEN TRIBUNAL (NGT)
+- Specialized court for environmental disputes.
+- Has jurisdiction over all civil cases involving environmental issues.
+- Can award compensation and direct restoration of damaged environment.
+- Appeals from NGT go to the Supreme Court.
+- Reference: National Green Tribunal Act, 2010.
+
+4. POLLUTER PAYS PRINCIPLE
+- The polluter is liable to pay for the environmental damage caused.
+- Recognized by the Supreme Court as a fundamental principle.
+- Reference: MC Mehta v. Union of India (various judgments); Article 21 of the Constitution.
+
+5. PUBLIC INTEREST LITIGATION (PIL)
+- Any citizen can file a PIL for environmental protection.
+- Filed directly in the High Court (Article 226) or Supreme Court (Article 32).
+- No court fee required.

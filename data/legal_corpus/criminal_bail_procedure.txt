@@ -1,0 +1,36 @@
+LEGAL PROCEDURE: BAIL IN INDIA
+
+1. WHAT IS BAIL?
+- Bail is the temporary release of an accused person awaiting trial, with a guarantee (bond/surety) that they will appear in court.
+- Reference: Bharatiya Nagarik Suraksha Sanhita, 2023 (BNSS) (Sections 478-489).
+
+2. TYPES OF BAIL
+a) Regular Bail: Applied after arrest, before the appropriate court.
+b) Anticipatory Bail: Applied before arrest, to avoid arrest. Filed in Sessions Court or High Court.
+c) Interim Bail: Temporary bail granted for a short period pending hearing of the bail application.
+d) Default Bail (Statutory Bail): If charge sheet is not filed within the prescribed period (60/90 days).
+- Reference: BNSS, 2023 (Sections 478, 482, 483).
+
+3. BAILABLE VS NON-BAILABLE OFFENCES
+- Bailable offences: Bail is a matter of right. Police must grant bail at the station.
+- Non-bailable offences: Bail is at the discretion of the court. Court considers gravity of offence, likelihood of absconding, tampering with evidence.
+- Reference: BNSS, 2023 (Section 478, 479, 480).
+
+4. PROCEDURE FOR APPLYING FOR BAIL
+- File a bail application before the appropriate court (Magistrate Court, Sessions Court, or High Court).
+- Attach: copy of FIR, arrest memo, grounds for bail.
+- The court hears both the accused and the prosecution.
+- Court may impose conditions: surrender passport, regular reporting, no contact with witnesses.
+- Reference: BNSS, 2023 (Sections 478-483).
+
+5. FACTORS CONSIDERED BY COURT
+- Nature and gravity of the offence.
+- Criminal antecedents of the accused.
+- Possibility of the accused fleeing from justice.
+- Possibility of tampering with evidence or influencing witnesses.
+- Health and age of the accused.
+- Reference: Supreme Court guidelines in various judgments.
+
+6. CANCELLATION OF BAIL
+- Prosecution can apply for cancellation if accused violates bail conditions, threatens witnesses, or absconds.
+- Reference: BNSS, 2023 (Section 484).
