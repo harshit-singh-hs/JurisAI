@@ -6,3 +6,5 @@ __pycache__/
 data/app.db
 data/checkpoints.sqlite
 .vercel/
+
+.vercel
