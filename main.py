@@ -122,6 +122,30 @@ async def delete_user_chat(session_id: str, current_user: dict = Depends(get_cur
     delete_chat(session_id, current_user["id"])
     return {"status": "success"}
 
+
+@app.patch("/api/chats/{session_id}/title")
+async def update_chat_title_endpoint(session_id: str, payload: dict, current_user: dict = Depends(get_current_user)):
+    title = payload.get("title") if isinstance(payload, dict) else None
+    if not title:
+        raise HTTPException(status_code=400, detail="Title is required")
+
+    # Verify owner
+    import sqlite3
+    from database.user_db import DB_PATH, update_chat_title
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("SELECT user_id FROM chats WHERE id = ?", (session_id,))
+    row = cursor.fetchone()
+    conn.close()
+
+    if not row:
+        raise HTTPException(status_code=404, detail="Chat not found")
+    if row[0] != current_user["id"]:
+        raise HTTPException(status_code=403, detail="Not authorized to update this chat")
+
+    update_chat_title(session_id, title)
+    return {"status": "success", "title": title}
+
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(request: ChatRequest, current_user: dict = Depends(get_current_user)):
     try:

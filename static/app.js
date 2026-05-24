@@ -182,20 +182,34 @@ logoutBtn.addEventListener('click', logout);
 function addMessage(sender, text) {
     const msgDiv = document.createElement('div');
     msgDiv.className = `message ${sender}-message`;
-    
+
     const avatar = document.createElement('div');
     avatar.className = 'avatar';
     avatar.textContent = sender === 'user' ? 'U' : 'AI';
-    
+
     const content = document.createElement('div');
-    content.className = 'content';
-    
-    // Parse Markdown if AI, plain text if user
-    content.innerHTML = sender === 'ai' ? marked.parse(text) : text;
-    
-    msgDiv.appendChild(sender === 'user' ? content : avatar);
-    msgDiv.appendChild(sender === 'user' ? avatar : content);
-    
+    content.className = 'message-content';
+
+    // Parse Markdown if AI, plain-escaped text if user
+    if (sender === 'ai') {
+        try {
+            content.innerHTML = marked.parse(text || '');
+        } catch (e) {
+            content.textContent = text;
+        }
+    } else {
+        content.textContent = text;
+    }
+
+    // Place avatar on left for AI, right for user
+    if (sender === 'ai') {
+        msgDiv.appendChild(avatar);
+        msgDiv.appendChild(content);
+    } else {
+        msgDiv.appendChild(content);
+        msgDiv.appendChild(avatar);
+    }
+
     chatBox.appendChild(msgDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
@@ -220,11 +234,14 @@ function startNewChat() {
     activeSessionId = generateSessionId();
     activeChatTitle.textContent = "New Consultation";
     displayWelcome();
-    
+
     // Remove active styling from list items
     const items = chatList.querySelectorAll('.chat-item');
     items.forEach(i => i.classList.remove('active'));
-    
+
+    // Create a local sidebar entry so users can rename immediately
+    createSidebarChat(activeSessionId, 'New Consultation', true);
+
     // Close sidebar on mobile if open
     if (sidebar) sidebar.classList.remove('open');
 }
@@ -240,39 +257,82 @@ async function loadChatHistoryList() {
         if (res.ok) {
             const chats = await res.json();
             chatList.innerHTML = '';
-            
-            chats.forEach(chat => {
-                const item = document.createElement('div');
-                item.className = `chat-item ${chat.id === activeSessionId ? 'active' : ''}`;
-                item.dataset.id = chat.id;
-                
-                const titleSpan = document.createElement('span');
-                titleSpan.className = 'chat-item-title';
-                titleSpan.textContent = chat.title;
-                titleSpan.title = chat.title;
-                
-                const deleteBtn = document.createElement('button');
-                deleteBtn.className = 'btn-delete-chat';
-                deleteBtn.innerHTML = '🗑️';
-                deleteBtn.title = 'Delete consultation';
-                
-                deleteBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    deleteConsultation(chat.id);
-                });
-                
-                item.appendChild(titleSpan);
-                item.appendChild(deleteBtn);
-                
-                item.addEventListener('click', () => {
-                    switchChat(chat.id, chat.title);
-                });
-                
-                chatList.appendChild(item);
-            });
+            chats.forEach(chat => createSidebarChat(chat.id, chat.title));
         }
     } catch (e) {
         console.error('Failed to load chat history list', e);
+    }
+}
+
+
+function createSidebarChat(sessionId, title, prepend = false) {
+    // Avoid duplicates
+    if (!sessionId) return;
+    if (chatList.querySelector(`.chat-item[data-id="${sessionId}"]`)) return;
+
+    const item = document.createElement('div');
+    item.className = `chat-item ${sessionId === activeSessionId ? 'active' : ''}`;
+    item.dataset.id = sessionId;
+
+    const titleSpan = document.createElement('span');
+    titleSpan.className = 'chat-item-title';
+    titleSpan.textContent = title || 'Untitled consultation';
+    titleSpan.title = title || '';
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.className = 'btn-delete-chat';
+    deleteBtn.innerHTML = '🗑️';
+    deleteBtn.title = 'Delete consultation';
+
+    deleteBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        deleteConsultation(sessionId);
+    });
+
+    // Click to switch
+    item.addEventListener('click', () => switchChat(sessionId, titleSpan.textContent));
+
+    // Double-click to rename
+    titleSpan.addEventListener('dblclick', (e) => {
+        e.stopPropagation();
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.className = 'chat-title-edit';
+        input.value = titleSpan.textContent;
+        input.addEventListener('keydown', async (ev) => {
+            if (ev.key === 'Enter') {
+                input.blur();
+            }
+        });
+        input.addEventListener('blur', async () => {
+            const newTitle = input.value.trim() || 'Untitled consultation';
+            titleSpan.textContent = newTitle;
+            titleSpan.title = newTitle;
+            item.replaceChild(titleSpan, input);
+            // Persist to backend if this chat belongs to server
+            try {
+                await fetch(`/api/chats/${sessionId}/title`, {
+                    method: 'PATCH',
+                    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                    body: JSON.stringify({ title: newTitle })
+                });
+            } catch (err) {
+                console.warn('Failed to persist chat title', err);
+            }
+        });
+
+        item.replaceChild(input, titleSpan);
+        input.focus();
+        input.select();
+    });
+
+    item.appendChild(titleSpan);
+    item.appendChild(deleteBtn);
+
+    if (prepend && chatList.firstChild) {
+        chatList.insertBefore(item, chatList.firstChild);
+    } else {
+        chatList.appendChild(item);
     }
 }
 
