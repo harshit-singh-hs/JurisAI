@@ -1,13 +1,13 @@
 :root {
-  --bg-main: #0B0F19;
-  --bg-panel: rgba(20, 26, 40, 0.7);
-  --bg-input: rgba(15, 23, 42, 0.6);
-  --accent-gold: #C5A059;
-  --accent-gold-hover: #D4AF37;
-  --text-primary: #E2E8F0;
-  --text-secondary: #94A3B8;
-  --border-color: rgba(255, 255, 255, 0.08);
-  --shadow-lg: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --bg-main: #FEF9F0;
+  --bg-panel: #FFFBF5;
+  --bg-input: #FFF8F1;
+  --accent-gold: #F4A942;
+  --accent-gold-hover: #FF8C00;
+  --text-primary: #2C2C2C;
+  --text-secondary: #666666;
+  --border-color: rgba(244, 169, 66, 0.2);
+  --shadow-lg: 0 10px 30px -10px rgba(244, 169, 66, 0.2);
   --glass-blur: blur(16px);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --radius-lg: 16px;
