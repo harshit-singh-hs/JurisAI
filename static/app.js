@@ -1,40 +1,43 @@
+/* ============================================================
+   JurisAI — app.js
+   Premium dark UI logic
+   ============================================================ */
+
 // DOM Elements
-const authContainer = document.getElementById('auth-container');
-const appContainer = document.getElementById('app-container');
-
-const loginForm = document.getElementById('login-form');
-const registerForm = document.getElementById('register-form');
+const authContainer    = document.getElementById('auth-container');
+const appContainer     = document.getElementById('app-container');
+const loginForm        = document.getElementById('login-form');
+const registerForm     = document.getElementById('register-form');
 const showRegisterLink = document.getElementById('show-register');
-const showLoginLink = document.getElementById('show-login');
-
-const loginEmailInput = document.getElementById('login-email');
-const loginPasswordInput = document.getElementById('login-password');
-const registerEmailInput = document.getElementById('register-email');
-const registerPasswordInput = document.getElementById('register-password');
-
-const loginError = document.getElementById('login-error');
+const showLoginLink    = document.getElementById('show-login');
+const loginEmailInput  = document.getElementById('login-email');
+const loginPasswordInput   = document.getElementById('login-password');
+const registerEmailInput   = document.getElementById('register-email');
+const registerPasswordInput= document.getElementById('register-password');
+const loginError    = document.getElementById('login-error');
 const registerError = document.getElementById('register-error');
 
-const chatBox = document.getElementById('chat-box');
-const userInput = document.getElementById('user-input');
-const sendBtn = document.getElementById('send-btn');
-const newChatBtn = document.getElementById('new-chat-btn');
-const chatList = document.getElementById('chat-list');
-const logoutBtn = document.getElementById('logout-btn');
-const activeChatTitle = document.getElementById('active-chat-title');
-const userEmailEl = document.getElementById('user-email');
-const userAvatarEl = document.getElementById('user-avatar');
+const chatBox        = document.getElementById('chat-box');
+const welcomeScreen  = document.getElementById('welcome-screen');
+const userInput      = document.getElementById('user-input');
+const sendBtn        = document.getElementById('send-btn');
+const newChatBtn     = document.getElementById('new-chat-btn');
+const chatList       = document.getElementById('chat-list');
+const logoutBtn      = document.getElementById('logout-btn');
+const activeChatTitle= document.getElementById('active-chat-title');
+const userEmailEl    = document.getElementById('user-email');
+const userAvatarEl   = document.getElementById('user-avatar');
+const menuBtn        = document.getElementById('menu-btn');
+const closeSidebarBtn= document.getElementById('close-sidebar-btn');
+const sidebar        = document.getElementById('sidebar');
 
-// Sidebar toggle (Mobile)
-const menuBtn = document.getElementById('menu-btn');
-const closeSidebarBtn = document.getElementById('close-sidebar-btn');
-const sidebar = document.getElementById('sidebar');
-
-// State variables
-let token = localStorage.getItem('jurisai_token');
+// State
+let token         = localStorage.getItem('jurisai_token');
 let activeSessionId = null;
 
-// Auth Forms Toggle
+// ============================================================
+// Auth toggle
+// ============================================================
 showRegisterLink.addEventListener('click', (e) => {
     e.preventDefault();
     loginForm.classList.add('hidden');
@@ -47,40 +50,55 @@ showLoginLink.addEventListener('click', (e) => {
     loginForm.classList.remove('hidden');
 });
 
-// Mobile Sidebar Logic
-if (menuBtn && sidebar) {
-    menuBtn.addEventListener('click', () => sidebar.classList.add('open'));
-}
-if (closeSidebarBtn && sidebar) {
-    closeSidebarBtn.addEventListener('click', () => sidebar.classList.remove('open'));
-}
+// ============================================================
+// Mobile sidebar
+// ============================================================
+if (menuBtn)        menuBtn.addEventListener('click', () => sidebar.classList.add('open'));
+if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', () => sidebar.classList.remove('open'));
 
-// Generate unique session ID
+// ============================================================
+// Helpers
+// ============================================================
 function generateSessionId() {
-    return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    return crypto.randomUUID ? crypto.randomUUID()
+        : Math.random().toString(36).slice(2) + Date.now().toString(36);
 }
 
-// Check if user is logged in
+function showError(el, msg) {
+    el.textContent = msg;
+    el.classList.remove('hidden');
+}
+
+function hideError(el) { el.classList.add('hidden'); }
+
+/** Show welcome state (no messages yet) */
+function showWelcome() {
+    chatBox.classList.add('hidden');
+    chatBox.innerHTML = '';
+    welcomeScreen.classList.remove('hidden');
+    activeChatTitle.textContent = 'New Consultation';
+}
+
+/** Switch to chat view (messages visible) */
+function showChatBox() {
+    welcomeScreen.classList.add('hidden');
+    chatBox.classList.remove('hidden');
+}
+
+// ============================================================
+// Auth check on boot
+// ============================================================
 async function checkAuth() {
-    if (!token) {
-        showAuthScreen();
-        return;
-    }
-    
+    if (!token) { showAuthScreen(); return; }
     try {
         const res = await fetch('/api/auth/me', {
             headers: { 'Authorization': `Bearer ${token}` }
         });
-        
         if (res.ok) {
             const user = await res.json();
             showAppScreen(user.email);
-        } else {
-            logout();
-        }
-    } catch (e) {
-        logout();
-    }
+        } else { logout(); }
+    } catch { logout(); }
 }
 
 function showAuthScreen() {
@@ -93,311 +111,337 @@ function showAppScreen(email) {
     appContainer.classList.remove('hidden');
     userEmailEl.textContent = email;
     userAvatarEl.textContent = email.charAt(0).toUpperCase();
-    
     loadChatHistoryList();
     startNewChat();
 }
 
+// ============================================================
 // Register
+// ============================================================
 registerForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    registerError.classList.add('hidden');
-    
-    const email = registerEmailInput.value.trim();
+    hideError(registerError);
+    const email    = registerEmailInput.value.trim();
     const password = registerPasswordInput.value;
-    
+
     if (password.length < 8) {
-        registerError.textContent = 'Password must be at least 8 characters long.';
-        registerError.classList.remove('hidden');
+        showError(registerError, 'Password must be at least 8 characters.');
         return;
     }
-    
     try {
-        const res = await fetch('/api/auth/register', {
+        const res  = await fetch('/api/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
         });
-        
         const data = await res.json();
         if (res.ok) {
             token = data.access_token;
             localStorage.setItem('jurisai_token', token);
             showAppScreen(email);
         } else {
-            registerError.textContent = data.detail || 'Registration failed.';
-            registerError.classList.remove('hidden');
+            showError(registerError, data.detail || 'Registration failed.');
         }
-    } catch (err) {
-        registerError.textContent = 'Network error. Please try again.';
-        registerError.classList.remove('hidden');
+    } catch {
+        showError(registerError, 'Network error. Please try again.');
     }
 });
 
+// ============================================================
 // Login
+// ============================================================
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    loginError.classList.add('hidden');
-    
-    const email = loginEmailInput.value.trim();
+    hideError(loginError);
+    const email    = loginEmailInput.value.trim();
     const password = loginPasswordInput.value;
-    
+
     try {
-        const res = await fetch('/api/auth/login', {
+        const res  = await fetch('/api/auth/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
         });
-        
         const data = await res.json();
         if (res.ok) {
             token = data.access_token;
             localStorage.setItem('jurisai_token', token);
             showAppScreen(email);
         } else {
-            loginError.textContent = data.detail || 'Invalid email or password.';
-            loginError.classList.remove('hidden');
+            showError(loginError, data.detail || 'Invalid email or password.');
         }
-    } catch (err) {
-        loginError.textContent = 'Network error. Please try again.';
-        loginError.classList.remove('hidden');
+    } catch {
+        showError(loginError, 'Network error. Please try again.');
     }
 });
 
+// ============================================================
 // Logout
+// ============================================================
 function logout() {
     token = null;
     localStorage.removeItem('jurisai_token');
-    loginEmailInput.value = '';
-    loginPasswordInput.value = '';
-    registerEmailInput.value = '';
-    registerPasswordInput.value = '';
+    loginEmailInput.value      = '';
+    loginPasswordInput.value   = '';
+    registerEmailInput.value   = '';
+    registerPasswordInput.value= '';
     chatList.innerHTML = '';
-    chatBox.innerHTML = '';
+    chatBox.innerHTML  = '';
     showAuthScreen();
 }
 logoutBtn.addEventListener('click', logout);
 
-// Add Message to Chat Box
+// ============================================================
+// Add message bubble
+// ============================================================
 function addMessage(sender, text) {
+    showChatBox();
+
     const msgDiv = document.createElement('div');
     msgDiv.className = `message ${sender}-message`;
-    
+
     const avatar = document.createElement('div');
     avatar.className = 'avatar';
-    avatar.textContent = sender === 'user' ? 'U' : 'AI';
-    
+    avatar.textContent = sender === 'user' ? (userAvatarEl.textContent || 'U') : '⚖';
+
     const content = document.createElement('div');
     content.className = 'content';
-    
-    // Parse Markdown if AI, plain text if user
-    content.innerHTML = sender === 'ai' ? marked.parse(text) : text;
-    
-    msgDiv.appendChild(sender === 'user' ? content : avatar);
-    msgDiv.appendChild(sender === 'user' ? avatar : content);
-    
+
+    if (sender === 'ai') {
+        content.innerHTML = marked.parse(text);
+    } else {
+        // Escape HTML in user text
+        content.textContent = text;
+    }
+
+    if (sender === 'user') {
+        msgDiv.appendChild(content);
+        msgDiv.appendChild(avatar);
+    } else {
+        msgDiv.appendChild(avatar);
+        msgDiv.appendChild(content);
+    }
+
     chatBox.appendChild(msgDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
+    return msgDiv;
 }
 
-// Show/Hide Welcome Message
-function displayWelcome() {
-    chatBox.innerHTML = '';
-    const welcomeText = `👋 Welcome to **JurisAI**, your elite AI Legal & Contract Advisor. I specialize in Indian Constitutional Law, Business/Corporate regulations, Property transactions, and Contract drafting/analysis.
+// Animated typing indicator
+function addTypingIndicator() {
+    showChatBox();
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'message ai-message typing';
+    msgDiv.id = 'typing-indicator';
 
-Here is what I can help you with:
-1. **Indian Constitution & Fundamental Rights**: Ask about any Article, Schedule, or Part of the Constitution, including rights, duties, and state policies.
-2. **Contract Analysis & Review**: Paste a contract clause to analyze risks, identify ambiguities, or find missing protections.
-3. **Contract Drafting Assistance**: Get help drafting clauses for NDAs, Employment Agreements, Service Contracts, and more.
-4. **General Legal Proceedings & Compliance**: Ask about general legal procedures, business incorporation, property transactions, or court filings.
+    const avatar = document.createElement('div');
+    avatar.className = 'avatar';
+    avatar.textContent = '⚖';
 
-How can I assist you with your legal needs today?`;
-    addMessage('ai', welcomeText);
+    const content = document.createElement('div');
+    content.className = 'content';
+    content.innerHTML = `
+        <div class="dot-flashing">
+            <span></span><span></span><span></span>
+        </div>
+    `;
+
+    msgDiv.appendChild(avatar);
+    msgDiv.appendChild(content);
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    return msgDiv;
 }
 
-// New Chat Button click handler
+function removeTypingIndicator() {
+    const el = document.getElementById('typing-indicator');
+    if (el) el.remove();
+}
+
+// ============================================================
+// Starter prompt buttons
+// ============================================================
+document.querySelectorAll('.starter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const prompt = btn.dataset.prompt;
+        if (prompt) {
+            userInput.value = prompt;
+            userInput.focus();
+        }
+    });
+});
+
+// ============================================================
+// New Chat
+// ============================================================
 function startNewChat() {
     activeSessionId = generateSessionId();
-    activeChatTitle.textContent = "New Consultation";
-    displayWelcome();
-    
-    // Remove active styling from list items
-    const items = chatList.querySelectorAll('.chat-item');
-    items.forEach(i => i.classList.remove('active'));
-    
-    // Close sidebar on mobile if open
+    showWelcome();
+    document.querySelectorAll('.chat-item').forEach(i => i.classList.remove('active'));
     if (sidebar) sidebar.classList.remove('open');
 }
 newChatBtn.addEventListener('click', startNewChat);
 
-// Load previous chats lists
+// ============================================================
+// Load chat history sidebar list
+// ============================================================
 async function loadChatHistoryList() {
     try {
         const res = await fetch('/api/chats', {
             headers: { 'Authorization': `Bearer ${token}` }
         });
-        
-        if (res.ok) {
-            const chats = await res.json();
-            chatList.innerHTML = '';
-            
-            chats.forEach(chat => {
-                const item = document.createElement('div');
-                item.className = `chat-item ${chat.id === activeSessionId ? 'active' : ''}`;
-                item.dataset.id = chat.id;
-                
-                const titleSpan = document.createElement('span');
-                titleSpan.className = 'chat-item-title';
-                titleSpan.textContent = chat.title;
-                titleSpan.title = chat.title;
-                
-                const deleteBtn = document.createElement('button');
-                deleteBtn.className = 'btn-delete-chat';
-                deleteBtn.innerHTML = '🗑️';
-                deleteBtn.title = 'Delete consultation';
-                
-                deleteBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    deleteConsultation(chat.id);
-                });
-                
-                item.appendChild(titleSpan);
-                item.appendChild(deleteBtn);
-                
-                item.addEventListener('click', () => {
-                    switchChat(chat.id, chat.title);
-                });
-                
-                chatList.appendChild(item);
+        if (!res.ok) return;
+        const chats = await res.json();
+        chatList.innerHTML = '';
+
+        chats.forEach(chat => {
+            const item = document.createElement('div');
+            item.className = `chat-item ${chat.id === activeSessionId ? 'active' : ''}`;
+            item.dataset.id = chat.id;
+
+            const titleSpan = document.createElement('span');
+            titleSpan.className = 'chat-item-title';
+            titleSpan.textContent = chat.title;
+            titleSpan.title = chat.title;
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'btn-delete-chat';
+            deleteBtn.innerHTML = '✕';
+            deleteBtn.title = 'Delete consultation';
+            deleteBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                deleteConsultation(chat.id);
             });
-        }
+
+            item.appendChild(titleSpan);
+            item.appendChild(deleteBtn);
+            item.addEventListener('click', () => switchChat(chat.id, chat.title));
+            chatList.appendChild(item);
+        });
     } catch (e) {
-        console.error('Failed to load chat history list', e);
+        console.error('Failed to load chat history', e);
     }
 }
 
-// Switch Active Chat
+// ============================================================
+// Switch to an existing chat
+// ============================================================
 async function switchChat(sessionId, title) {
     activeSessionId = sessionId;
     activeChatTitle.textContent = title;
-    
-    // Set active item styling
-    const items = chatList.querySelectorAll('.chat-item');
-    items.forEach(i => {
-        if (i.dataset.id === sessionId) {
-            i.classList.add('active');
-        } else {
-            i.classList.remove('active');
-        }
+
+    document.querySelectorAll('.chat-item').forEach(i => {
+        i.classList.toggle('active', i.dataset.id === sessionId);
     });
-    
+
     chatBox.innerHTML = '';
-    
-    // Show typing state or loader
-    const loaderDiv = document.createElement('div');
-    loaderDiv.className = 'message ai-message typing';
-    loaderDiv.innerHTML = '<div class="avatar">AI</div><div class="content">Retrieving legal consultation records...</div>';
-    chatBox.appendChild(loaderDiv);
-    
+    showChatBox();
+
+    const loader = addTypingIndicator();
+
     try {
         const res = await fetch(`/api/chats/${sessionId}/messages`, {
             headers: { 'Authorization': `Bearer ${token}` }
         });
-        
-        chatBox.removeChild(loaderDiv);
-        
+
+        removeTypingIndicator();
+
         if (res.ok) {
             const messages = await res.json();
             if (messages.length === 0) {
-                displayWelcome();
+                showWelcome();
             } else {
-                messages.forEach(m => {
-                    addMessage(m.role === 'user' ? 'user' : 'ai', m.content);
-                });
+                messages.forEach(m => addMessage(m.role === 'user' ? 'user' : 'ai', m.content));
             }
         } else {
-            displayWelcome();
+            showWelcome();
         }
-    } catch (e) {
-        chatBox.removeChild(loaderDiv);
-        displayWelcome();
+    } catch {
+        removeTypingIndicator();
+        showWelcome();
     }
-    
-    // Close sidebar on mobile
+
     if (sidebar) sidebar.classList.remove('open');
 }
 
-// Delete Chat Session
+// ============================================================
+// Delete chat
+// ============================================================
 async function deleteConsultation(sessionId) {
-    if (!confirm('Are you sure you want to delete this consultation record?')) return;
-    
+    if (!confirm('Delete this consultation? This cannot be undone.')) return;
     try {
         const res = await fetch(`/api/chats/${sessionId}`, {
             method: 'DELETE',
             headers: { 'Authorization': `Bearer ${token}` }
         });
-        
         if (res.ok) {
-            if (activeSessionId === sessionId) {
-                startNewChat();
-            }
+            if (activeSessionId === sessionId) startNewChat();
             loadChatHistoryList();
         }
     } catch (e) {
-        console.error('Failed to delete chat session', e);
+        console.error('Failed to delete consultation', e);
     }
 }
 
-// Send Message
+// ============================================================
+// Send message
+// ============================================================
 async function sendMessage() {
     const text = userInput.value.trim();
-    if (!text) return;
-    
-    addMessage('user', text);
+    if (!text || !token) return;
+
     userInput.value = '';
-    
-    // Show typing indicator
-    const typingDiv = document.createElement('div');
-    typingDiv.className = 'message ai-message typing';
-    typingDiv.innerHTML = '<div class="avatar">AI</div><div class="content">Analyzing legal precedents...</div>';
-    chatBox.appendChild(typingDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
-    
+    autoResize();
+
+    addMessage('user', text);
+    addTypingIndicator();
+
     try {
         const res = await fetch('/api/chat', {
             method: 'POST',
-            headers: { 
+            headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({ message: text, session_id: activeSessionId })
         });
-        
-        chatBox.removeChild(typingDiv);
-        
+
+        removeTypingIndicator();
+
         if (res.ok) {
             const data = await res.json();
             addMessage('ai', data.response);
-            // Refresh history list (in case a new chat is added or title needs updating)
-            loadChatHistoryList();
+            loadChatHistoryList(); // Refresh sidebar (title may have been generated)
         } else {
-            const errData = await res.json();
-            addMessage('ai', `Error processing query: ${errData.detail || 'Internal server error.'}`);
+            const err = await res.json().catch(() => ({}));
+            addMessage('ai', `⚠️ ${err.detail || 'Something went wrong. Please try again.'}`);
         }
-    } catch (error) {
-        chatBox.removeChild(typingDiv);
-        addMessage('ai', 'Error connecting to the server.');
+    } catch {
+        removeTypingIndicator();
+        addMessage('ai', '⚠️ Could not connect to the server. Please check your connection.');
     }
 }
 
-// Click listener for interactive follow-up suggestions
+// ============================================================
+// Auto-resize textarea
+// ============================================================
+function autoResize() {
+    userInput.style.height = 'auto';
+    userInput.style.height = Math.min(userInput.scrollHeight, 160) + 'px';
+}
+
+userInput.addEventListener('input', autoResize);
+
 sendBtn.addEventListener('click', sendMessage);
-userInput.addEventListener('keypress', (e) => {
+
+userInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
         sendMessage();
     }
 });
 
-// Init on boot
+// ============================================================
+// Boot
+// ============================================================
 checkAuth();

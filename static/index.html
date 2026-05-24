@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JurisAI Advisor - Legal & Contract Assistant</title>
-    <!-- Google Fonts: Playfair Display for headings and Inter for UI text -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/style.css">
+    <title>JurisAI — Intelligent Legal Advisor</title>
+    <meta name="description" content="JurisAI is an AI-powered legal advisor specializing in Business and Contract Law.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FIXED PATH: leading slash ensures Vercel serves correctly -->
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
     <!-- Auth Container -->
     <div id="auth-container" class="auth-container">
+        <div class="auth-bg-glow"></div>
         <div class="auth-card">
             <div class="auth-header">
                 <span class="auth-icon">⚖️</span>
-                <h2>JurisAI Advisor</h2>
-                <p>Intelligent Business & Contract Law Assistant</p>
+                <h2>JurisAI</h2>
+                <p>Intelligent Business &amp; Contract Law Advisor</p>
             </div>
-            
+
             <!-- Login Form -->
             <form id="login-form" class="auth-form">
-                <h3>Account Log In</h3>
+                <h3>Sign In</h3>
                 <div class="form-group">
                     <label for="login-email">Email Address</label>
                     <input type="email" id="login-email" required placeholder="name@firm.com">
@@ -31,10 +34,10 @@
                     <input type="password" id="login-password" required placeholder="••••••••">
                 </div>
                 <div id="login-error" class="error-msg hidden"></div>
-                <button type="submit" class="btn btn-primary">Log In</button>
+                <button type="submit" class="btn btn-primary">Sign In</button>
                 <p class="auth-switch">Don't have an account? <a href="#" id="show-register">Create one</a></p>
             </form>
-            
+
             <!-- Register Form -->
             <form id="register-form" class="auth-form hidden">
                 <h3>Create Account</h3>
@@ -47,8 +50,8 @@
                     <input type="password" id="register-password" required placeholder="Min. 8 characters">
                 </div>
                 <div id="register-error" class="error-msg hidden"></div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
-                <p class="auth-switch">Already have an account? <a href="#" id="show-login">Log in</a></p>
+                <button type="submit" class="btn btn-primary">Create Account</button>
+                <p class="auth-switch">Already have an account? <a href="#" id="show-login">Sign in</a></p>
             </form>
         </div>
     </div>
@@ -62,20 +65,20 @@
                     <span class="logo-icon">⚖️</span>
                     <h2>JurisAI</h2>
                 </div>
-                <button id="close-sidebar-btn" class="mobile-only-btn">×</button>
+                <button id="close-sidebar-btn" class="mobile-only-btn" aria-label="Close sidebar">×</button>
             </div>
-            
+
             <button id="new-chat-btn" class="btn btn-new-chat">
                 <span class="btn-icon">+</span> New Consultation
             </button>
-            
+
             <div class="chat-history">
                 <h3>Previous Consultations</h3>
                 <div id="chat-list" class="chat-list">
                     <!-- Loaded dynamically -->
                 </div>
             </div>
-            
+
             <div class="sidebar-footer">
                 <div class="user-info">
                     <span class="user-avatar" id="user-avatar">U</span>
@@ -89,35 +92,49 @@
         <main class="main-chat">
             <header class="chat-header">
                 <div class="header-left">
-                    <button id="menu-btn" class="menu-btn">
+                    <button id="menu-btn" class="menu-btn" aria-label="Toggle sidebar">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
                     </button>
                     <div class="chat-title-container">
                         <h1 id="active-chat-title">New Consultation</h1>
-                        <p class="chat-status">Hybrid Search (Chroma + BM25) • Llama-3.3-70B</p>
+                        <p class="chat-status">Hybrid Search • Llama-3.3-70B</p>
                     </div>
                 </div>
             </header>
 
-            <div id="chat-box" class="chat-box">
-                <!-- Messages dynamic -->
+            <!-- Welcome screen shown when no messages -->
+            <div id="welcome-screen" class="welcome-screen">
+                <div class="welcome-icon">⚖️</div>
+                <h2>Welcome to JurisAI</h2>
+                <p>Ask me about contracts, business law, legal rights, or paste a clause for review.</p>
+                <div class="starter-prompts">
+                    <button class="starter-btn" data-prompt="Draft a basic NDA agreement between two companies">📄 Draft an NDA</button>
+                    <button class="starter-btn" data-prompt="Explain the key elements of a valid contract">📋 Explain contract basics</button>
+                    <button class="starter-btn" data-prompt="What are my rights if a vendor breaches a service agreement?">⚖️ Vendor breach rights</button>
+                    <button class="starter-btn" data-prompt="Review this clause: [paste clause here]">🔍 Review a clause</button>
+                </div>
+            </div>
+
+            <div id="chat-box" class="chat-box hidden">
+                <!-- Messages rendered dynamically -->
             </div>
 
             <div class="input-area-container">
                 <div class="input-area">
-                    <textarea id="user-input" placeholder="Ask a legal query or paste a contract clause..."></textarea>
-                    <button id="send-btn">
+                    <textarea id="user-input" placeholder="Ask a legal question or paste a contract clause..." rows="1"></textarea>
+                    <button id="send-btn" aria-label="Send message">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
                     </button>
                 </div>
                 <div class="disclaimer-note">
-                    Disclaimer: JurisAI is an AI assistant and does not substitute for professional legal counsel.
+                    JurisAI is an AI assistant and does not substitute for professional legal counsel.
                 </div>
             </div>
         </main>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="static/app.js"></script>
+    <!-- FIXED PATH: leading slash ensures Vercel serves correctly -->
+    <script src="/static/app.js"></script>
 </body>
 </html>
