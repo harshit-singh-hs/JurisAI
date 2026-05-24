@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 from langchain_groq import ChatGroq
-from langchain_community.chat_models import ChatOllama
 
 load_dotenv()
 
@@ -18,7 +17,4 @@ def get_llm():
             api_key=api_key
         )
     else:
-        # Fallback to local Ollama if no API key is provided
-        # Ensure ollama is running locally with `ollama run llama3`
-        print("Warning: No GROQ_API_KEY found. Falling back to local Ollama (llama3).")
-        return ChatOllama(model="llama3", temperature=0)
+        raise ValueError("GROQ_API_KEY is not set. Cannot initialize LLM.")
