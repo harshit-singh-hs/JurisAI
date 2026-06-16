@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: jurisai
+    runtime: docker
+    repo: https://github.com/harshit-singh-hs/JurisAI
+    branch: main
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.12"
