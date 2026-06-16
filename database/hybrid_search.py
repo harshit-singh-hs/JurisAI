@@ -1,7 +1,10 @@
 import os
 import pickle
 from langchain_community.retrievers import BM25Retriever
-from langchain.retrievers import EnsembleRetriever
+try:
+    from langchain.retrievers import EnsembleRetriever
+except ImportError:
+    from langchain_community.retrievers import EnsembleRetriever
 from database.chroma_setup import get_vectorstore
 
 BM25_INDEX_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data", "bm25_index.pkl")
