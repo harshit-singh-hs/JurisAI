@@ -21,8 +21,8 @@ def synthesizer_node(state: AgentState):
     if state.get("needs_clarification"):
         prompt = PromptTemplate.from_template(
             "{system_instructions}\n\n"
-            "Context: The user's query is too vague to provide meaningful advice.\n"
-            "Action: Politely and warmly ask the user to provide more details about their specific legal situation, contract type, or question.\n\n"
+            "Context: The user's query is too vague to provide meaningful legal advice.\n"
+            "Action: Ask the user to specify the relevant legal area, facts of their situation, or the specific legal provision they need guidance on.\n\n"
             "User Query: {query}\n\n"
             "Response:"
         )
@@ -34,7 +34,7 @@ def synthesizer_node(state: AgentState):
         prompt = PromptTemplate.from_template(
             "{system_instructions}\n\n"
             "Context: The user is greeting you or making casual conversation.\n"
-            "Action: Respond warmly and politely, and ask how you can assist them with their legal queries or contract needs today.\n\n"
+            "Action: Respond professionally and ask how you can assist them with their legal queries or contract needs today.\n\n"
             "User Query: {query}\n\n"
             "Response:"
         )
