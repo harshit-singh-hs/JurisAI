@@ -34,7 +34,7 @@
 
 <p align="center">
   <img src="screenshots/login.png" alt="Login Page" width="90%"/>
-  <br/><em>Secure authentication with dark-mode glassmorphism UI</em>
+  <br/><em>Authentication Page</em>
 </p>
 
 <p align="center">
