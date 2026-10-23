@@ -103,10 +103,22 @@ def get_user_chats(user_id: int):
     conn.close()
     return [dict(r) for r in rows]
 
+def get_chat_owner(session_id: str):
+    """Return the user_id that owns a chat, or None if the chat doesn't exist."""
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    cursor.execute("SELECT user_id FROM chats WHERE id = ?", (session_id,))
+    row = cursor.fetchone()
+    conn.close()
+    return row[0] if row else None
+
 def delete_chat(session_id: str, user_id: int):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute("DELETE FROM chats WHERE id = ? AND user_id = ?", (session_id, user_id))
+    # SQLite only honours ON DELETE CASCADE when foreign keys are enabled, so remove messages explicitly
+    if cursor.rowcount:
+        cursor.execute("DELETE FROM messages WHERE chat_id = ?", (session_id,))
     conn.commit()
     conn.close()
 

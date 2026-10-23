@@ -1,18 +1,23 @@
-fastapi
-uvicorn[standard]
-langchain
-langgraph
-chromadb
-langchain-community
-langchain-groq
-python-dotenv
-pydantic
+# Upper bounds stop a future major release from breaking deploys (LangChain 1.0 moved
+# EnsembleRetriever and crashed the app on startup)
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+langchain>=1.0,<2
+langchain-classic>=1.0,<2
+langchain-core>=1.0,<2
+langchain-community>=0.4,<0.5
+langchain-groq>=1.0,<2
+langchain-chroma>=1.0,<2
+langchain-text-splitters>=1.0,<2
+langgraph>=1.0,<2
+langgraph-checkpoint>=3.0,<5
+langgraph-checkpoint-sqlite>=3.0,<4
+# Also provides the ONNX all-MiniLM-L6-v2 embeddings, so no PyTorch/sentence-transformers needed
+chromadb>=1.0,<2
+python-dotenv>=1.0,<2
+pydantic>=2.7,<3
 beautifulsoup4
 markdown
-langchain-huggingface
-rank-bm25
-langgraph-checkpoint
-langgraph-checkpoint-sqlite
-bcrypt
-pyjwt
-sentence-transformers
+rank-bm25>=0.2,<0.3
+bcrypt>=4.0,<6
+pyjwt>=2.8,<3

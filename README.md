@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/FastAPI-0.100+-009688?style=flat-square&logo=fastapi&logoColor=white" />
   <img src="https://img.shields.io/badge/LangGraph-Multi--Agent-FF6F00?style=flat-square" />
-  <img src="https://img.shields.io/badge/Groq-Llama_3.3_70B-orange?style=flat-square" />
+  <img src="https://img.shields.io/badge/Groq-GPT--OSS_120B-orange?style=flat-square" />
   <img src="https://img.shields.io/badge/ChromaDB-Vector_Store-4B0082?style=flat-square" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" />
 </p>
@@ -62,7 +62,7 @@ JurisAI uses a **LangGraph-powered multi-agent workflow** where specialized agen
 | **Reviewer Agent** | Reviews and finalizes the response for accuracy |
 
 ### 📚 Hybrid Legal Search (RAG)
-- **Vector Search** — Semantic similarity via ChromaDB + Sentence Transformers (`all-MiniLM-L6-v2`)
+- **Vector Search** — Semantic similarity via ChromaDB + `all-MiniLM-L6-v2` embeddings (ONNX Runtime, no PyTorch)
 - **BM25 Keyword Search** — Traditional legal keyword matching for precision
 - **Ensemble Retriever** — Combines both with weighted fusion for optimal retrieval
 
@@ -129,7 +129,7 @@ JurisAI uses a **LangGraph-powered multi-agent workflow** where specialized agen
                            │
               ┌────────────▼────────────┐
               │    Groq Cloud API       │
-              │  Llama 3.3 - 70B        │
+              │  GPT-OSS 120B           │
               │  (LLM Inference)        │
               └─────────────────────────┘
 ```
@@ -142,11 +142,11 @@ JurisAI uses a **LangGraph-powered multi-agent workflow** where specialized agen
 |---|---|
 | **Frontend** | Vanilla HTML/CSS/JS · Dark Mode Glassmorphism · Google Fonts (Inter, Outfit) |
 | **Backend** | FastAPI · Uvicorn · Python 3.10+ |
-| **AI/LLM** | LangGraph (Multi-Agent Orchestration) · LangChain · Groq API (Llama 3.3 70B) |
-| **Search** | ChromaDB (Vector DB) · Sentence Transformers (all-MiniLM-L6-v2) · BM25 (rank-bm25) |
+| **AI/LLM** | LangGraph (Multi-Agent Orchestration) · LangChain · Groq API (GPT-OSS 120B) |
+| **Search** | ChromaDB (Vector DB) · all-MiniLM-L6-v2 (ONNX) · BM25 (rank-bm25) |
 | **Database** | SQLite (Users, Chats, Messages, Checkpoints) |
 | **Auth** | JWT (PyJWT) · bcrypt |
-| **Deployment** | Vercel (Serverless) |
+| **Deployment** | Docker · Render |
 
 ---
 
@@ -176,7 +176,6 @@ source venv/bin/activate
 ### 3. Install dependencies
 ```bash
 pip install -r requirements.txt
-pip install sentence-transformers
 ```
 
 ### 4. Set up environment variables
@@ -186,7 +185,8 @@ GROQ_API_KEY=your_groq_api_key_here
 JWT_SECRET=your_secret_key_here
 ```
 
-### 5. Ingest legal data (first time only)
+### 5. (Optional) Rebuild the search index
+The prebuilt index in `data/chroma_db/` is committed, so this is only needed after changing files in `data/`:
 ```bash
 python ingestion/document_loader.py
 ```
@@ -197,6 +197,14 @@ python main.py
 ```
 
 Open **http://localhost:8000** in your browser and create an account to start consulting!
+
+### Running the evaluation (optional)
+`ragas` depends on `scikit-network`, which has no Python 3.14 wheels yet, so use Python 3.10–3.13 for this:
+```bash
+pip install -r requirements-dev.txt
+python evaluation/generate_dataset.py
+python evaluation/run_eval.py
+```
 
 ---
 
@@ -273,6 +281,9 @@ JurisAI/
 │
 ├── main.py                    # FastAPI application entry point
 ├── requirements.txt           # Python dependencies
+├── requirements-dev.txt       # Extra dependencies for evaluation/
+├── Dockerfile                 # Container image (used by Render)
+├── render.yaml                # Render deployment config
 ├── vercel.json                # Vercel deployment config
 └── .env                       # Environment variables (not tracked)
 ```
@@ -284,7 +295,8 @@ JurisAI/
 | Variable | Description | Required |
 |---|---|---|
 | `GROQ_API_KEY` | API key from [Groq Console](https://console.groq.com/) | ✅ |
-| `JWT_SECRET` | Secret key for JWT token signing | Optional (has default) |
+| `JWT_SECRET` | Secret key for JWT token signing | Recommended (random per restart if unset, which logs everyone out) |
+| `GROQ_MODEL` | Groq model to use | Optional (default `openai/gpt-oss-120b`) |
 
 ---
 

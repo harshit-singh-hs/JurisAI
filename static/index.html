@@ -6,6 +6,7 @@
     <title>JurisAI — Intelligent Legal Advisor</title>
     <meta name="description" content="JurisAI is an AI-powered legal advisor specializing in Indian Constitutional Law, Business & Contract regulations, and legal compliance.">
     <meta name="theme-color" content="#0a0e1a">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +105,7 @@
                 <h1 id="active-chat-title">New Consultation</h1>
                 <p class="chat-status">
                   <span class="status-dot"></span>
-                  Hybrid Search · Llama-3.3-70B
+                  Hybrid Search · GPT-OSS-120B
                 </p>
               </div>
             </div>
@@ -134,8 +135,9 @@
 
     </div>
 
-    <!-- Markdown parser -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Markdown parser (pinned: marked v16+ no longer ships marked.min.js) + HTML sanitizer -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.3.1/dist/purify.min.js"></script>
     <script src="static/app.js"></script>
   </body>
 </html>

@@ -7,3 +7,14 @@ evaluation/
 scratch/
 test_*.py
 .env
+# Not needed at runtime; keeps the function under Vercel's 500MB Python limit
+screenshots/
+data/legal_corpus/
+Dockerfile
+render.yaml
+requirements-dev.txt
+# Local runtime data (user accounts, chat history, search-index working copy)
+data/app.db
+data/*.sqlite*
+data/legal_advisor.db*
+data/chroma_runtime/

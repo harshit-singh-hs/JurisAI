@@ -1,0 +1,5 @@
+# Extra packages for evaluation/ (not needed to run the app)
+# Requires Python <= 3.13: ragas depends on scikit-network, which has no 3.14 wheels yet
+-r requirements.txt
+ragas>=0.4,<0.5
+datasets>=4.0,<5

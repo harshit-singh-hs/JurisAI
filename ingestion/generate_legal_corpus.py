@@ -2,6 +2,29 @@ import os
 import re
 import requests
 
+# The upstream files are UTF-8 but damaged in two ways: some characters are split across a line
+# break, and some have lost their first two bytes, leaving an orphaned final byte
+SPLIT_CHAR = re.compile(rb'([\xc0-\xf4][\x80-\xbf]*)\n+(?=[\x80-\xbf])')
+ORPHAN_BYTES = {
+    b'\x94\x9d': '”',  # ”
+    b'\x94\x99': '’',  # ’
+    b'\x99': '’',      # ’
+    b'\x93': '“',      # “
+    b'\x94': '—',      # —
+}
+
+def decode_source(raw: bytes) -> str:
+    # A character can be split by more than one line break
+    for _ in range(2):
+        raw = SPLIT_CHAR.sub(rb'\1', raw)
+    text = raw.decode("utf-8", errors="surrogateescape")
+
+    def repair(match):
+        orphan = match.group().encode("utf-8", errors="surrogateescape")
+        return ORPHAN_BYTES.get(orphan, "")
+
+    return re.sub(r'[\udc80-\udcff]+', repair, text)
+
 def is_article_in_part(article_num, file_name):
     art = article_num.strip().upper()
     part = file_name.upper().replace(".TXT", "")
@@ -91,7 +114,7 @@ def fetch_and_generate_corpus():
         'SCHEDULE8.txt', 'SCHEDULE9.txt', 'SCHEDULE10.txt', 'SCHEDULE11.txt', 'SCHEDULE12.txt'
     ]
     
-    output_dir = "d:/Project/Online-Legal-Advisor/data/legal_corpus"
+    output_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "legal_corpus")
     os.makedirs(output_dir, exist_ok=True)
     
     # Clear existing constitution files to prevent orphans or corruption
@@ -108,12 +131,14 @@ def fetch_and_generate_corpus():
     for file_name in files:
         url = f"https://raw.githubusercontent.com/captn3m0/constitution/master/{file_name}"
         print(f"Downloading {file_name}...")
-        res = requests.get(url)
+        res = requests.get(url, timeout=30)
         if res.status_code != 200:
             print(f"Failed to download {file_name}")
             continue
             
-        content = res.text
+        # Some files are served without a charset, so res.text guessed Mac Roman and garbled
+        # every dash and quote (e.g. "—" -> "‚Äî")
+        content = decode_source(res.content)
         
         # Add to full constitution list
         full_constitution_contents.append(f"=== START OF {file_name.upper()} ===\n{content}\n=== END OF {file_name.upper()} ===")

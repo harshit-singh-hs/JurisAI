@@ -10,3 +10,8 @@ screenshots/
 *.md
 .gitignore
 .vercelignore
+# Local user accounts and chat history must not be baked into the image
+data/app.db
+data/checkpoints.sqlite*
+data/legal_advisor.db*
+data/chroma_runtime/

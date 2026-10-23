@@ -6,7 +6,7 @@ and common legal procedures in India.
 """
 import os
 
-OUTPUT_DIR = "d:/Project/Online-Legal-Advisor/data/legal_corpus"
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "legal_corpus")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 DOCUMENTS = {

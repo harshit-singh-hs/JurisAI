@@ -3,10 +3,12 @@ __pycache__/
 *.pyc
 *.pyo
 .env
+
+# Runtime databases (user accounts, chat history, agent memory)
 data/app.db
 data/*.sqlite*
-data/chroma_db/
-.vercel/
-.vercel
+data/chroma_runtime/
 
-.vercel
+# data/chroma_db/ is deliberately tracked: the app ships the prebuilt search index
+
+.vercel/

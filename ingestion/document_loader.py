@@ -10,12 +10,16 @@ from database.chroma_setup import get_vectorstore
 
 DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 
+# constitution_full.txt repeats every per-article file; indexing it made ~45% of all chunks
+# duplicates that crowded the specific articles out of search results
+EXCLUDED_FILES = {"constitution_full.txt"}
+
 def load_documents():
     print(f"Loading documents from {DATA_DIR}...")
-    
+
     # Load Text files
     txt_loader = DirectoryLoader(DATA_DIR, glob="**/*.txt", loader_cls=TextLoader, loader_kwargs={"encoding": "utf-8"})
-    txt_docs = txt_loader.load()
+    txt_docs = [doc for doc in txt_loader.load() if os.path.basename(doc.metadata["source"]) not in EXCLUDED_FILES]
     
     # Load PDF files
     try:
@@ -52,17 +56,17 @@ def ingest_data():
     # Clean old indices to prevent duplication
     import shutil
     from database.chroma_setup import DB_DIR
-    from database.hybrid_search import BM25_INDEX_PATH
-    
+
     print("Clearing old Chroma DB directory...")
     shutil.rmtree(DB_DIR, ignore_errors=True)
-    
-    if os.path.exists(BM25_INDEX_PATH):
-        print("Clearing old BM25 index...")
-        os.remove(BM25_INDEX_PATH)
-        
-    vectorstore = get_vectorstore()
-    
+
+    # The BM25 index is now built from Chroma at app startup; remove the stale pickle if present
+    old_bm25_path = os.path.join(DATA_DIR, "bm25_index.pkl")
+    if os.path.exists(old_bm25_path):
+        os.remove(old_bm25_path)
+
+    vectorstore = get_vectorstore(persist_directory=DB_DIR)
+
     print("Adding documents to ChromaDB...")
     # Add in batches of 100 to avoid any database limits
     batch_size = 100
@@ -70,17 +74,7 @@ def ingest_data():
         batch = chunks[i:i + batch_size]
         print(f"Ingesting batch {i//batch_size + 1} of {(len(chunks)-1)//batch_size + 1}...")
         vectorstore.add_documents(batch)
-    
-    print("Building BM25 Index for Hybrid Search...")
-    import pickle
-    from langchain_community.retrievers import BM25Retriever
-    
-    bm25_retriever = BM25Retriever.from_documents(chunks)
-    bm25_retriever.k = 6
-    
-    with open(BM25_INDEX_PATH, "wb") as f:
-        pickle.dump(bm25_retriever, f)
-        
+
     print("Ingestion complete.")
 
 if __name__ == "__main__":

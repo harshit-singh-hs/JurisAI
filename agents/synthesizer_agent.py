@@ -3,14 +3,18 @@ from agents.llm_setup import get_llm
 from langchain_core.prompts import PromptTemplate
 from agents.prompts import SYSTEM_PROMPT, LONG_TERM_MEMORY_PREFIX, RAG_CONTEXT_PREFIX
 
+# chat_history grows every turn; cap what goes into the prompt so long chats don't exceed token limits
+MAX_HISTORY_MESSAGES = 10
+
 def synthesizer_node(state: AgentState):
     llm = get_llm()
     query = state["query"]
     category = state.get("category", "")
-    
+
     history_str = ""
     if state.get("chat_history"):
-        history_str = "\n".join([f"{msg['role'].upper()}: {msg['content']}" for msg in state["chat_history"]])
+        recent_history = state["chat_history"][-MAX_HISTORY_MESSAGES:]
+        history_str = "\n".join([f"{msg['role'].upper()}: {msg['content']}" for msg in recent_history])
         
     user_context = ""
     formatted_system = SYSTEM_PROMPT.format(user_context=user_context)

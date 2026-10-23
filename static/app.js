@@ -121,6 +121,16 @@ function showError(el, msg) {
   el.classList.remove('hidden');
 }
 
+// fetch() with the auth header; an expired/invalid token sends the user back to sign-in
+async function authFetch(url, options = {}) {
+  const res = await fetch(url, {
+    ...options,
+    headers: { ...(options.headers || {}), 'Authorization': `Bearer ${token}` }
+  });
+  if (res.status === 401) logout();
+  return res;
+}
+
 // ── Auth Check ──
 async function checkAuth() {
   if (!token) { showAuthScreen(); return; }
@@ -246,7 +256,17 @@ function displayWelcome() {
 }
 
 // ── New Chat ──
+// A new chat only exists server-side after its first message, so the sidebar shows a local placeholder
+function showNewChatPlaceholder() {
+  createSidebarChat(activeSessionId, 'New Consultation', true);
+  const item = chatList.querySelector(`.chat-item[data-id="${activeSessionId}"]`);
+  if (item) item.dataset.unsaved = 'true';
+}
+
 function startNewChat() {
+  // Drop any earlier placeholder that was never used
+  chatList.querySelectorAll('.chat-item[data-unsaved]').forEach(i => i.remove());
+
   activeSessionId = generateSessionId();
   activeChatTitle.textContent = 'New Consultation';
   displayWelcome();
@@ -254,7 +274,7 @@ function startNewChat() {
   const items = chatList.querySelectorAll('.chat-item');
   items.forEach(i => i.classList.remove('active'));
 
-  createSidebarChat(activeSessionId, 'New Consultation', true);
+  showNewChatPlaceholder();
   closeSidebar();
 }
 newChatBtn.addEventListener('click', startNewChat);
@@ -262,14 +282,20 @@ newChatBtn.addEventListener('click', startNewChat);
 // ── Chat History List ──
 async function loadChatHistoryList() {
   try {
-    const res = await fetch('/api/chats', {
-      headers: { 'Authorization': `Bearer ${token}` }
-    });
+    const res = await authFetch('/api/chats');
 
     if (res.ok) {
       const chats = await res.json();
       chatList.innerHTML = '';
       chats.forEach(chat => createSidebarChat(chat.id, chat.title));
+
+      const activeChat = chats.find(c => c.id === activeSessionId);
+      if (activeChat) {
+        // Pick up the title the server generated from the first message
+        activeChatTitle.textContent = activeChat.title;
+      } else if (activeSessionId) {
+        showNewChatPlaceholder();
+      }
     }
   } catch (e) {
     console.error('Failed to load chat history list', e);
@@ -312,14 +338,18 @@ function createSidebarChat(sessionId, title, prepend = false) {
     input.className = 'chat-title-edit';
     input.value = titleSpan.textContent;
 
+    let cancelled = false;
     input.addEventListener('keydown', (ev) => {
       if (ev.key === 'Enter') input.blur();
       if (ev.key === 'Escape') {
+        // Removing the focused input fires blur, which must not save the edit
+        cancelled = true;
         item.replaceChild(titleSpan, input);
       }
     });
 
     input.addEventListener('blur', async () => {
+      if (cancelled) return;
       const newTitle = input.value.trim() || 'Untitled consultation';
       titleSpan.textContent = newTitle;
       titleSpan.title = newTitle;
@@ -327,11 +357,12 @@ function createSidebarChat(sessionId, title, prepend = false) {
         item.replaceChild(titleSpan, input);
       }
       try {
-        await fetch(`/api/chats/${sessionId}/title`, {
+        await authFetch(`/api/chats/${sessionId}/title`, {
           method: 'PATCH',
-          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ title: newTitle })
         });
+        if (sessionId === activeSessionId) activeChatTitle.textContent = newTitle;
       } catch (err) {
         console.warn('Failed to persist chat title', err);
       }
@@ -366,9 +397,7 @@ async function switchChat(sessionId, title) {
   showTypingIndicator('Loading consultation…');
 
   try {
-    const res = await fetch(`/api/chats/${sessionId}/messages`, {
-      headers: { 'Authorization': `Bearer ${token}` }
-    });
+    const res = await authFetch(`/api/chats/${sessionId}/messages`);
 
     removeTypingIndicator();
 
@@ -420,12 +449,10 @@ function showDeleteConfirm(sessionId, title) {
 
 async function deleteConsultation(sessionId) {
   try {
-    const res = await fetch(`/api/chats/${sessionId}`, {
-      method: 'DELETE',
-      headers: { 'Authorization': `Bearer ${token}` }
-    });
+    const res = await authFetch(`/api/chats/${sessionId}`, { method: 'DELETE' });
 
-    if (res.ok) {
+    // 404 = a "New Consultation" placeholder that was never saved; just drop it locally
+    if (res.ok || res.status === 404) {
       if (activeSessionId === sessionId) startNewChat();
       loadChatHistoryList();
     }
@@ -455,7 +482,8 @@ function addMessage(sender, text) {
 
   if (sender === 'ai') {
     try {
-      content.innerHTML = marked.parse(text || '');
+      // LLM output can echo user-supplied HTML, so sanitize before injecting it
+      content.innerHTML = DOMPurify.sanitize(marked.parse(text || ''));
     } catch {
       content.textContent = text;
     }
@@ -512,7 +540,11 @@ function removeTypingIndicator() {
 
 async function sendMessage() {
   const text = userInput.value.trim();
-  if (!text) return;
+  // Enter bypasses the disabled send button, so guard against double-submits here
+  if (!text || sendBtn.disabled) return;
+
+  // The user may switch chats while waiting; only render the reply into the chat it belongs to
+  const sessionId = activeSessionId;
 
   addMessage('user', text);
   userInput.value = '';
@@ -522,29 +554,31 @@ async function sendMessage() {
   showTypingIndicator();
 
   try {
-    const res = await fetch('/api/chat', {
+    const res = await authFetch('/api/chat', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      },
-      body: JSON.stringify({ message: text, session_id: activeSessionId })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: text, session_id: sessionId })
     });
 
-    removeTypingIndicator();
     sendBtn.disabled = false;
+    if (sessionId !== activeSessionId) {
+      if (res.ok) loadChatHistoryList();
+      return;
+    }
+    removeTypingIndicator();
 
     if (res.ok) {
       const data = await res.json();
       addMessage('ai', data.response);
       loadChatHistoryList();
-    } else {
+    } else if (res.status !== 401) {
       const errData = await res.json().catch(() => ({}));
       addMessage('ai', `⚠️ Error: ${errData.detail || 'Internal server error.'}`);
     }
   } catch {
-    removeTypingIndicator();
     sendBtn.disabled = false;
+    if (sessionId !== activeSessionId) return;
+    removeTypingIndicator();
     addMessage('ai', '⚠️ Could not connect to the server. Please try again.');
   }
 }
