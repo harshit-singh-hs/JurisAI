@@ -1,6 +1,6 @@
 CONSTITUTION OF INDIA - PART12.txt
 
-Article 280. Finance Commission.”(1) The President shall, within two years
+Article 280. Finance Commission.—(1) The President shall, within two years
 from the commencement of this Constitution and thereafter at the expiration of
 every fifth year or at such earlier time as the President considers necessary, by
 order constitute a Finance Commission which shall consist of a Chairman and
@@ -9,7 +9,7 @@ four other members to be appointed by the President.
 requisite for appointment as members of the Commission and the manner in
 which they shall be selected.
 (3) It shall be the duty of the Commission to make recommendations to
-the President as to”
+the President as to—
 (a) the distribution between the Union and the States of the net
 proceeds of taxes which are to be, or may be, divided between them
 under this Chapter and the allocation between the States of the respective

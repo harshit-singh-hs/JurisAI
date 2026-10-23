@@ -1,7 +1,7 @@
 CONSTITUTION OF INDIA - PART3.txt
 
-Article 31A. Saving of laws providing for acquisition of estates, etc.‚Äî
-(1) Notwithstanding anything contained in article 13, no law providing for‚Äî
+Article 31A. Saving of laws providing for acquisition of estates, etc.—
+(1) Notwithstanding anything contained in article 13, no law providing for—
 (a) the acquisition by the State of any estate or of any rights therein
 or the extinguishment or modification of any such rights, or
 (b) the taking over of the management of any property by the State
@@ -37,11 +37,11 @@ to him under any law for the time being in force or any building or structure
 standing thereon or appurtenant thereto, unless the law relating to the
 acquisition of such land, building or structure, provides for payment of
 compensation at a rate which shall not be less than the market value thereof.
-(2) In this article,‚Äî
-(a) the expression ‚Äúestate‚Äù shall, in relation to any local area, have the
+(2) In this article,—
+(a) the expression “estate” shall, in relation to any local area, have the
 same meaning as that expression or its local equivalent has in the
 existing law relating to land tenures in force in that area and shall also
-include‚Äî
+include—
 (i) any jagir, inam or muafi or other similar grant and in the States
 of Tamil Nadu and Kerala, any janmam right;
 (ii) any land held under ryotwari settlement;
@@ -49,7 +49,7 @@ of Tamil Nadu and Kerala, any janmam right;
 purposes ancillary thereto, including waste land, forest land, land for
 pasture or sites of buildings and other structures occupied by
 cultivators of land, agricultural labourers and village artisans;
-(b) the expression ‚Äúrights‚Äù, in relation to an estate, shall include any
+(b) the expression “rights”, in relation to an estate, shall include any
 rights vesting in a proprietor, sub-proprietor, under-proprietor, tenureholder, 
 raiyat, under-raiyat or other intermediary and any rights or
 privileges in respect of land revenue.

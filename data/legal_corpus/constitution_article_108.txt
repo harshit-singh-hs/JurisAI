@@ -1,7 +1,7 @@
 CONSTITUTION OF INDIA - PART5.txt
 
-Article 108. Joint sitting of both Houses in certain cases.ö (1) If after a Bill
-has been passed by one House and transmitted to the other Houseö
+Article 108. Joint sitting of both Houses in certain cases.— (1) If after a Bill
+has been passed by one House and transmitted to the other House—
 (a) the Bill is rejected by the other House; or
 (b) the Houses have finally disagreed as to the amendments to be
 made in the Bill; or
@@ -28,7 +28,7 @@ if any, as are agreed to in joint sitting, is passed by a majority of the total
 number
 of members of both Houses present and voting, it shall be deemed for the
 purposes of this Constitution to have been passed by both Houses:
-Provided that at a joint sittingö
+Provided that at a joint sitting—
 (a) if the Bill, having been passed by one House, has not been passed
 by the other House with amendments and returned to the House in which
 it originated, no amendment shall be proposed to the Bill other than such

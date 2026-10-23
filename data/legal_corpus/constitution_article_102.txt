@@ -1,8 +1,8 @@
 CONSTITUTION OF INDIA - PART5.txt
 
-Article 102. Disqualifications for membership.ö (1) A person shall be
+Article 102. Disqualifications for membership.— (1) A person shall be
 disqualified for being chosen as, and for being, a member of either House of
-Parliamentö
+Parliament—
 (a) if he holds any office of profit under the Government of India or
 the Government of any State, other than an office declared by Parliament
 by law not to disqualify its holder;
@@ -18,7 +18,7 @@ court;
 citizenship of a foreign State, or is under any acknowledgment of
 allegiance or adherence to a foreign State;
 (e) if he is so disqualified by or under any law made by Parliament.
-Explanation.öFor the purposes of this clause a person shall not be
+Explanation.—For the purposes of this clause a person shall not be
 deemed to hold an office of profit under the Government of India or the
 Government of any State by reason only that he is a Minister either for the
 Union or for such State.

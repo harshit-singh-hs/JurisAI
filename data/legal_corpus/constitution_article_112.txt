@@ -1,11 +1,11 @@
 CONSTITUTION OF INDIA - PART5.txt
 
-Article 112. Annual financial statement.ö(1) The President shall in respect of
+Article 112. Annual financial statement.—(1) The President shall in respect of
 every financial year cause to be laid before both the Houses of Parliament a
 statement of the estimated receipts and expenditure of the Government of India
 for that year, in this Part referred to as the "annual financial statement''.
 (2) The estimates of expenditure embodied in the annual financial
-statement shall show separatelyö
+statement shall show separately—
 (a) the sums required to meet expenditure described by this
 Constitution as expenditure charged upon the Consolidated Fund of
 India; and
@@ -13,7 +13,7 @@ India; and
 made from the Consolidated Fund of India,
 and shall distinguish expenditure on revenue account from other expenditure.
 (3) The following expenditure shall be expenditure charged on the
-Consolidated Fund of Indiaö
+Consolidated Fund of India—
 (a) the emoluments and allowances of the President and other
 expenditure relating to his office;
 (b) the salaries and allowances of the Chairman and the Deputy

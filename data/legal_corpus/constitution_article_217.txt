@@ -1,7 +1,7 @@
 CONSTITUTION OF INDIA - PART6.txt
 
 Article 217. Appointment and conditions of the office of a Judge of a High
-Court.‚Äî(1) Every Judge of a High Court shall be appointed by the President
+Court.—(1) Every Judge of a High Court shall be appointed by the President
 by warrant under his hand and seal after consultation with the Chief Justice of
 India, the Governor of the State, and, in the case of appointment of a Judge
 other than the Chief Justice, the Chief Justice of the High Court, and shall hol
@@ -9,7 +9,7 @@ d
 office, in the case of an additional or acting Judge, as provided in article 224
 ,
 and in any other case, until he attains the age of sixty-two years:
-Provided that‚Äî
+Provided that—
 (a) a Judge may, by writing under his hand addressed to the
 President, resign his office;
 (b) a Judge may be removed from his office by the President in the
@@ -20,7 +20,7 @@ the President to be a Judge of the Supreme Court or by his being
 transferred by the President to any other High Court within the territory
 of India.
 (2) A person shall not be qualified for appointment as a Judge of a High
-Court unless he is a citizen of India and‚Äî
+Court unless he is a citizen of India and—
 (a) has for at least ten years held a judicial office in the territory of
 India; or
 (b) has for at least ten years been an advocate of a High Court or of
@@ -37,7 +37,7 @@ two or more such Courts in succession.
 
 THE CONSTITUTION OF INDIA
 
-Explanation.‚ÄîFor the purposes of this clause‚Äî
+Explanation.—For the purposes of this clause—
 (a) in computing the period during which a person has held
 judicial office in the territory of India, there shall be included any period,
 after he has held any judicial office, during which the person has been an

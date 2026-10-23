@@ -1,13 +1,13 @@
 CONSTITUTION OF INDIA - PART6.txt
 
-Article 202. Annual financial statement.‚Äî(1) The Governor shall in respect of
+Article 202. Annual financial statement.—(1) The Governor shall in respect of
 every financial year cause to be laid before the House or Houses of the
 Legislature of the State a statement of the estimated receipts and expenditure o
 f
-the State for that year, in this Part referred to as the ‚Äúannual financial
-statement‚Äù.
+the State for that year, in this Part referred to as the “annual financial
+statement”.
 (2) The estimates of expenditure embodied in the annual financial
-statement shall show separately‚Äî
+statement shall show separately—
 (a) the sums required to meet expenditure described by this
 Constitution as expenditure charged upon the Consolidated Fund of the
 State; and
@@ -20,7 +20,7 @@ THE CONSTITUTION OF INDIA
 from the Consolidated Fund of the State;
 and shall distinguish expenditure on revenue account from other expenditure.
 (3) The following expenditure shall be expenditure charged on the
-Consolidated Fund of each State‚Äî
+Consolidated Fund of each State—
 (a) the emoluments and allowances of the Governor and other
 expenditure relating to his office;
 (b) the salaries and allowances of the Speaker and the Deputy

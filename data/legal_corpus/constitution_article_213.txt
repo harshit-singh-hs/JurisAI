@@ -1,14 +1,14 @@
 CONSTITUTION OF INDIA - PART6.txt
 
 Article 213. Power of Governor to promulgate Ordinances during recess of
-Legislature.‚Äî(1) If at any time, except when the Legislative Assembly of a
+Legislature.—(1) If at any time, except when the Legislative Assembly of a
 State is in session, or where there is a Legislative Council in a State, except
 when both Houses of the Legislature are in session, the Governor is satisfied
 that circumstances exist which render it necessary for him to take immediate
 action, he may promulgate such Ordinances as the circumstances appear to
 him to require:
 Provided that the Governor shall not, without instructions from the
-President, promulgate any such Ordinance if‚Äî
+President, promulgate any such Ordinance if—
 (a) a Bill containing the same provisions would under this
 Constitution have required the previous sanction of the President for the
 introduction thereof into the Legislature; or
@@ -25,7 +25,7 @@ having been reserved for the consideration of the President, it had
 received the assent of the President.
 (2) An Ordinance promulgated under this article shall have the same
 force and effect as an Act of the Legislature of the State assented to by the
-Governor, but every such Ordinance‚Äî
+Governor, but every such Ordinance—
 (a) shall be laid before the Legislative Assembly of the State, or
 where there is a Legislative Council in the State, before both the Houses,
 and shall cease to operate at the expiration of six weeks from the
@@ -35,7 +35,7 @@ agreed to by the Legislative Council, if any, upon the passing of the
 resolution or, as the case may be, on the resolution being agreed to by
 the Council; and
 (b) may be withdrawn at any time by the Governor.
-Explanation.‚ÄîWhere the Houses of the Legislature of a State having a
+Explanation.—Where the Houses of the Legislature of a State having a
 Legislative Council are summoned to reassemble on different dates, the period
 of six weeks shall be reckoned from the later of those dates for the purposes of
 this clause.
@@ -55,4 +55,4 @@ President and assented to by him.
 *
 *
 *
-CHAPTER V.‚ÄîTHE HIGH COURTS IN THE STATES
+CHAPTER V.—THE HIGH COURTS IN THE STATES

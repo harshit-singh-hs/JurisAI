@@ -1,6 +1,6 @@
 CONSTITUTION OF INDIA - PART6.txt
 
-Article 171. Composition of the Legislative Councils.‚Äî(1) The total number
+Article 171. Composition of the Legislative Councils.—(1) The total number
 of members in the Legislative Council of a State having such a Council shall
 not exceed one third of the total number of members in the Legislative
 Assembly of that State:
@@ -14,7 +14,7 @@ THE CONSTITUTION OF INDIA
 (2) Until Parliament by law otherwise provides, the composition of the
 Legislative Council of a State shall be as provided in clause (3).
 (3) Of the total number of members of the Legislative Council of a
-State‚Äî
+State—
 (a) as nearly as may be, one-third shall be elected by electorates
 consisting of members of municipalities, district boards and such other
 local authorities in the State as Parliament may by law specify;
@@ -43,7 +43,7 @@ with the system of proportional representation by means of the single
 transferable vote.
 (5) The members to be nominated by the Governor under sub-clause (e)
 of clause (3) shall consist of persons having special knowledge or practical
-experience in respect of such matters as the following, namely:‚Äî
+experience in respect of such matters as the following, namely:—
 Literature, science, art, co-operative movement and social service.
 
 71
