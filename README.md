@@ -146,7 +146,7 @@ JurisAI uses a **LangGraph-powered multi-agent workflow** where specialized agen
 | **Search** | ChromaDB (Vector DB) · all-MiniLM-L6-v2 (ONNX) · BM25 (rank-bm25) |
 | **Database** | SQLite (Users, Chats, Messages, Checkpoints) |
 | **Auth** | JWT (PyJWT) · bcrypt |
-| **Deployment** | Docker · Render |
+| **Deployment** | Docker · Render · Vercel |
 
 ---
 
@@ -297,6 +297,11 @@ JurisAI/
 | `GROQ_API_KEY` | API key from [Groq Console](https://console.groq.com/) | ✅ |
 | `JWT_SECRET` | Secret key for JWT token signing | Recommended (random per restart if unset, which logs everyone out) |
 | `GROQ_MODEL` | Groq model to use | Optional (default `openai/gpt-oss-120b`) |
+
+### Deployment notes
+- **Render:** builds the `Dockerfile` (see `render.yaml`). Set `GROQ_API_KEY` and `JWT_SECRET` in the Render dashboard.
+- **Vercel:** detects the FastAPI app automatically (`vercel.json`). Set `GROQ_API_KEY` and `JWT_SECRET` in the project's environment variables.
+- **Data persistence:** user accounts and chats are stored in SQLite. On Vercel and on Render's free plan the filesystem is temporary, so they reset whenever the app restarts. Keeping them permanently needs a hosted database (or a persistent disk on a paid Render plan).
 
 ---
 
